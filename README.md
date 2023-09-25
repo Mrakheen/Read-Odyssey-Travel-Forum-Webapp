@@ -21,43 +21,21 @@ $ python -m venv myenv
 $ source myenv/bin/activate
 ```
 
-4. Install Ribbit's dependencies
+3. Install Ribbit's dependencies
 
 ```sh
 $ cd backend
 $ pip install -r requirements.txt
 ```
 
-6. Setting up environment file using `settingsExample.py`
-
-```sh
-$ mv backend/settingsExample.py backend/settings.py
-```
-
-7. Configure your local MySQL credentials
-
-```python
-# Go to the newly created `settings.py` file, and find the `DATABASE` configuration:
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'your_db_name',
-        'USER': 'your_mysql_user',
-        'PASSWORD': 'your_mysql_password',
-        'HOST': 'localhost',
-    }
-}
-```
-
-8. Once the DB has been properly set up, run migrations
+4. Once the DB has been properly set up, run migrations
 
 ```sh
 $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
-9. Finally, run the server
+5. Finally, run the server
 
 ```sh
 $ python manage.py runserver
