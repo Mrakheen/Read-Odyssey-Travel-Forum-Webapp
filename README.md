@@ -17,7 +17,7 @@ $ git clone https://github.com/Mrakheen/travel-website-project-CSE-3311.git
 
 ```sh
 $ python -m venv myenv
-$ ribbitPath myenv/bin/activate
+$ myenv\Scripts\activate
 ```
 
 3. Install Ribbit's dependencies
