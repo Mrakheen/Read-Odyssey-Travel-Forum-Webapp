@@ -10,7 +10,7 @@ Setting up <b>Ribbit</b> on your local machine without Docker? Here are the inst
 1. First clone the repository
 
 ```sh
-$ git clone https://github.com/juliantjg/Ribbit.git
+$ git clone https://github.com/Mrakheen/travel-website-project-CSE-3311.git
 ```
 
 2. Setting up python virtual environment and activating it
