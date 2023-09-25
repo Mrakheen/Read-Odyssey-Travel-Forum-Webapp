@@ -18,7 +18,7 @@ $ git clone https://github.com/juliantjg/Ribbit.git
 ```sh
 $ cd Ribbit
 $ python -m venv myenv
-$ source myenv/bin/activate
+$ ribbitPath myenv/bin/activate
 ```
 
 3. Install Ribbit's dependencies
