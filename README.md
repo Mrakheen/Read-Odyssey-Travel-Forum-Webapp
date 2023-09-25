@@ -1,6 +1,6 @@
 
 
-## :airplane: Getting Started (without Docker)
+## :airplane: Getting Started 
 Setting up <b>Ribbit</b> on your local machine without Docker? Here are the instructions:
 
 <details>
