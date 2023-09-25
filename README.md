@@ -27,14 +27,20 @@ $ cd backend
 $ pip install -r requirements.txt
 ```
 
-4. Once the DB has been properly set up, run migrations
+4. Create db file if not exist
+
+```sh
+if db.sqlite3 does not exist create the file with name "db.sqlite3" in the backend. The current db file could be corrupted causing migrations in the next step to fail.
+```
+
+5. Once the DB has been properly set up, run migrations
 
 ```sh
 $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
-5. Finally, run the server
+6. Finally, run the server
 
 ```sh
 $ python manage.py runserver
