@@ -16,7 +16,6 @@ $ git clone https://github.com/juliantjg/Ribbit.git
 2. Setting up python virtual environment and activating it
 
 ```sh
-$ cd Ribbit
 $ python -m venv myenv
 $ ribbitPath myenv/bin/activate
 ```
