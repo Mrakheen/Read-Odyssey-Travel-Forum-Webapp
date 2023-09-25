@@ -94,49 +94,6 @@ $ cd backend
 $ python manage.py test
 ```
 
-</details>
-
-## :whale: Docker
-You can access the dockerized full stack version of <b>Ribbit</b> under the GitHub Container Registry [here](https://github.com/juliantjg/Ribbit/pkgs/container/ribbit-full-stack). Follow these steps to run the Docker image on your local machine:
-
-<details>
- <summary><b>Setting up full stack app with Docker</b></summary>
- <br />
- 
-1. Click on the `ribbit-full-stack` package provided on the the Packages section of this repository (alternatively, you can [click here](https://github.com/juliantjg/Ribbit/pkgs/container/ribbit-full-stack)):
-
-![image](https://user-images.githubusercontent.com/53683415/224958641-32c03471-cabb-404c-9bd1-01e445b47be2.png#gh-dark-mode-only)
-![image](https://user-images.githubusercontent.com/53683415/224959049-a29bc18b-1ae3-4c17-a553-c0adb3ff9e39.png#gh-light-mode-only)
-
-
-2. Next, pull the image:
-```sh
-docker pull ghcr.io/juliantjg/ribbit-full-stack:latest
-```
-
-3. Finally, run the image:
-```sh
-docker run -p 8000:8000 -it ghcr.io/juliantjg/ribbit-full-stack:latest
-
-=======================================================
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-March 14, 2023 - 09:11:34
-Django version 4.1.3, using settings 'backend.settings'
-Starting development server at http://0.0.0.0:8000/
-Quit the server with CONTROL-C.
-=======================================================
-```
-
-4. Finally, access the application by entering the following link on your browser:
-```sh
-http://localhost:8000/#/landingPage/functionalitiesLanding
-```
-
-</details>
-
 ## :recycle: Continuous Testing <img src="https://github.com/juliantjg/Ribbit/actions/workflows/django.yml/badge.svg">
 I've set up Git Actions for this repository to run automated tests on pushes/PRs made on the `main`. 
 <details>
