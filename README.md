@@ -1,7 +1,7 @@
 
 
 ## :airplane: Getting Started 
-Setting up <b>Ribbit</b> on your local machine without Docker? Here are the instructions:
+Setting up <b>Redyssey</b> on your local machine without Docker? Here are the instructions:
 
 <details>
  <summary><b>Setting up the back-end</b></summary>
@@ -20,7 +20,7 @@ $ python -m venv myenv
 $ myenv\Scripts\activate
 ```
 
-3. Install Ribbit's dependencies
+3. Install Redyssey's dependencies
 
 ```sh
 $ cd backend

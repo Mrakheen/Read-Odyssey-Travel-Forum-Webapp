@@ -35,11 +35,11 @@ function ShowMySubribbitsModal(props) {
         >
             <Modal.Header closeButton id="confirmDeleteModalHeader">
                 <Modal.Title id="contained-modal-title-vcenter">
-                    <img src={logoSmall} id="logoSmallShowMySubribbitsModal" />&nbsp;My Subribbits
+                    <img src={logoSmall} id="logoSmallShowMySubribbitsModal" />&nbsp;My Subredysseys
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                Showing Subribbits you own and joined as an <span class="badge badge-primary">ACCEPTED</span> member.
+                Showing Subredysseys you own and joined as an <span class="badge badge-primary">ACCEPTED</span> member.
                 <hr />
                 <div class="p-3">
                     {
@@ -60,8 +60,8 @@ function ShowMySubribbitsModal(props) {
                             :
                             (
                                 <div>
-                                    <center><b>No Subribbits yet</b> <br />
-                                        <small>You can find Subribbits by clicking the <b><i className="fas fa-users fa-lg"></i> Communities</b> tab</small></center>
+                                    <center><b>No Subredysseys yet</b> <br />
+                                        <small>You can find Subredysseys by clicking the <b><i className="fas fa-users fa-lg"></i> Communities</b> tab</small></center>
                                 </div>
                             )
                     }

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel, Toast } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import logoBig from '../../image/ribbitWithLogoBig.png';
 import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
 import { listPosts } from "../../actions/postActions"
@@ -256,9 +255,9 @@ function Subribbit() {
                                     <div class="row pt-5"></div>
                                     <div class="row pt-5"></div>
                                     <div class="row">
-                                        <b>Sorry, Subribbit name not found.</b>
+                                        <b>Sorry, Subredyssey name not found.</b>
                                         <br />
-                                        <small>The Subribbit may have been removed or the name is incorrect.</small>
+                                        <small>The Subredyssey may have been removed or the name is incorrect.</small>
                                         <br />
                                     </div>
 

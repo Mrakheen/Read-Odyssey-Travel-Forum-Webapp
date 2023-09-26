@@ -15,7 +15,7 @@ def get(request, pk):
     user = request.user
 
     if not checkSubribbitId(pk):
-        return error('Subribbit ID not found')
+        return error('Subredyssey ID not found')
 
     subribbit = Subribbit.objects.get(id=pk)
 
@@ -25,4 +25,4 @@ def get(request, pk):
     members = SubribbitMember.objects.filter(subribbit=subribbit)
 
     serializer = SubribbitMemberForModSerializer(members, many=True)
-    return response('Subribbit members (for mod) fetched successfully', serializer.data)
+    return response('Subredyssey members (for mod) fetched successfully', serializer.data)

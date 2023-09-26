@@ -18,7 +18,7 @@ def create(request):
     data['description'] = profanity.censor(data['description'])
 
     if checkNameExist(data['name']):
-        return error('Subribbit name taken')
+        return error('Subredyssey name taken')
 
     subribbit = Subribbit.objects.create(
         name = data['name'],
@@ -29,4 +29,4 @@ def create(request):
 
     serializer = SubribbitSerializer(subribbit, many=False)
 
-    return response('Subribbit created successfully', serializer.data)
+    return response('Subredyssey created successfully', serializer.data)

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import logoBig from '../../image/ribbitWithLogoBig.png';
 import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
 import { Link, useNavigate } from 'react-router-dom';
@@ -78,11 +77,6 @@ function ResetPassword() {
             <div id="page-size">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="logoBig">
-                                <img src={logoBig} alt="Ribbit Logo Big" id="ribbitLogoBig" />
-                            </div>
-                        </div>
 
                         <div class="col-md-6">
                             <div id="sendResetPasswordEmailCardPaddingTop"></div>

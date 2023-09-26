@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel } from "react-bootstrap";
 import Footer from '../Footer/Footer'
 import { useDispatch, useSelector } from "react-redux";
-import logoBig from '../../image/ribbitWithLogoBig.png';
 import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
 import { Link, useNavigate, Redirect } from 'react-router-dom';
@@ -76,7 +75,7 @@ function CreateSubribbit() {
                                 (
                                     <div class="row">
                                         <div class="col-md-7">
-                                            <h4>Create Subribbit</h4>
+                                            <h4>Create Subredyssey</h4>
                                             <hr />
                                             <ToastContainer />
                                             <Form
@@ -89,7 +88,7 @@ function CreateSubribbit() {
                                                                 <Form.Control
                                                                     required
                                                                     type="name"
-                                                                    placeholder="Subribbit Name"
+                                                                    placeholder="Subredyssey Name"
                                                                     onChange={(e) => setName(e.target.value)}
                                                                 />
                                                             </Form.Group>

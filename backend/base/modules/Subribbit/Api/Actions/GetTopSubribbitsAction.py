@@ -10,4 +10,4 @@ def get(request, limit):
         subribbits = Subribbit.objects.all().order_by('-numMembers', '-createdAt')[:int(limit)]
     
     serializer = GetAllSubribbitSerializer(subribbits, many=True)
-    return response('Top Subribbits retrieved', serializer.data)
+    return response('Top Subredysseys retrieved', serializer.data)

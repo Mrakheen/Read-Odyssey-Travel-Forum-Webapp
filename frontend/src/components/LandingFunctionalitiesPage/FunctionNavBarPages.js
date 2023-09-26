@@ -17,7 +17,7 @@ const FunctionNavBarPages = () => {
                 </li>
                 <li>
                     <b>Communities Page</b> <AuthLabel /> <br />
-                    <small>The communities page shows all the communities (Subribbits) on Ribbit. The Subribbit cards shown will provide information such as number of users joined (excluding owner), the status of the user on this Subribbit (owner, accepted member, banned, etc). User unaffiliated with the Subribbit will see no status. User can create a Subribbit on this page's right sidebar.</small>
+                    <small>The communities page shows all the communities (Subredyssey) on Ribbit. The Subredyssey cards shown will provide information such as number of users joined (excluding owner), the status of the user on this Subribbit (owner, accepted member, banned, etc). User unaffiliated with the Subribbit will see no status. User can create a Subribbit on this page's right sidebar.</small>
                 </li>
                 <li>
                     <b>Explore Page</b> <br />

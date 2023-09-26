@@ -14,4 +14,4 @@ def get(request):
         ownedSubribbits = ownedSubribbits | Subribbit.objects.filter(id = eachSubribbit.subribbit.id)
 
     serializer = GetAllSubribbitSerializer(ownedSubribbits, many=True)
-    return response('Subribbit list fetched successfully', serializer.data)
+    return response('Subredyssey list fetched successfully', serializer.data)

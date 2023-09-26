@@ -10,15 +10,13 @@ const index = () => {
             <div class="col-md-7">
               <div class="row">
                 <div class="col-md-10">
-                  <h1 id="landingHomePageLargeText">A Reddit Clone Made With React+Redux & Django</h1>
+                  <h1 id="landingHomePageLargeText">An Unique Travel Website</h1>
                   <div class="pt-3">
-                    <p>Ribbit is a web application made with Django (backend api) and React.js + Redux (frontend). Made in
-                      reference to Reddit, Ribbit provides features such as sharing posts, communities, and many more. Please check the video on the
-                      features tab on the navbar concerning Ribbit's features and development.</p>
+                    <p>Oddysey Hub is a web application made with Django (backend api) and React.js + Redux (frontend).</p>
                   </div>
                   <form className="get-access">
                     <Link to="/home">
-                      <button type="submit" className="get-access-btn">Go to Ribbit &nbsp;<i class="fas fa-sign-in-alt"></i></button>
+                      <button type="submit" className="get-access-btn">Go to Oddysey Hub &nbsp;<i class="fas fa-sign-in-alt"></i></button>
                     </Link>
                   </form>
                 </div>

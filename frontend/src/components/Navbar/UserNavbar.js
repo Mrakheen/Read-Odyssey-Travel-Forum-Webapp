@@ -10,12 +10,13 @@ import {
 } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import logoSmall from "../../image/greenFrog.png";
+import logoName from "../../image/logoName.png";
 import { useDispatch, useSelector } from "react-redux";
 import homeLogo from "../../image/home-solid.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../actions/userActions";
 import NotificationButton from "../Notification/NotificationButton";
-import ShowMySubribbitsButtonNavbar from "../Buttons/ShowMySubribbitsButtonNavbar";
+
 import CreatePostButtonNavbar from "../Posts/CreatePostButtonNavbar";
 
 function UserNavbar() {
@@ -31,7 +32,7 @@ function UserNavbar() {
   };
 
   return (
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark custom-navbar">
       <Container>
         <div class="pt-1">
           <Link to="/">
@@ -40,9 +41,15 @@ function UserNavbar() {
                 src={logoSmall}
                 class="d-inline-block align-middle mr-2"
                 id="logoNavbar"
-                width="50"
+                width="65"
               />
-              Ribbit
+              <img
+                src={logoName}
+                class="d-inline-block align-middle mr-2"
+                id="logoNavbar"
+                width="98"
+                height = "30"
+              />
             </Navbar.Brand>
           </Link>
         </div>
@@ -64,16 +71,14 @@ function UserNavbar() {
               <Link to="/home">
                 <button type="button" class="btn btn-dark" id="buttonHome">
                   <li class="nav-item active">
-                    <i className="fas fa-home fa-lg"></i>
-                    &nbsp;&nbsp;Home
+                    <i className="fas fa-lg"></i>
+                    &nbsp;&nbsp;<strong>Home</strong>
                     <span class="sr-only">(current)</span>
                   </li>
                 </button>
               </Link>
             </li>
-            <li class="nav-item">
-              <ShowMySubribbitsButtonNavbar />
-            </li>
+            
             <li class="nav-item active">
               <Link to="/subribbits">
                 <button
@@ -82,8 +87,8 @@ function UserNavbar() {
                   id="buttonCommunities"
                 >
                   <li class="nav-item active">
-                    <i className="fas fa-users fa-lg"></i>
-                    &nbsp;&nbsp;Communities
+                    <i className="fas fa-lg"></i>
+                    &nbsp;&nbsp;<strong>Communities</strong>
                     <span class="sr-only">(current)</span>
                   </li>
                 </button>
@@ -97,8 +102,8 @@ function UserNavbar() {
                   id="buttonCommunities"
                 >
                   <li class="nav-item active">
-                    <i class="fas fa-compass fa-lg"></i>
-                    &nbsp;&nbsp;Explore
+                    <i class="fas fa-lg"></i>
+                    &nbsp;&nbsp;<strong>Search Posts</strong>
                     <span class="sr-only">(current)</span>
                   </li>
                 </button>
@@ -116,7 +121,9 @@ function UserNavbar() {
           {/* So here is the next ul, where I put the navbar-right in a separate ul for the user dropdown */}
           <ul class="navbar-nav navbar-right">
             <li class="nav-item">
-              <button type="button" class="btn btn-dark">
+              <button type="button" 
+              class="btn btn-dark Profile-Bttn"
+              >
                 {userInfo ? (
                   <NavDropdown
                     title={

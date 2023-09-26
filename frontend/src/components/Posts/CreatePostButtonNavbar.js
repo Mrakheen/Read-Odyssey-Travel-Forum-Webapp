@@ -15,7 +15,7 @@ function CreatePostButtonNavbar({ }) {
                 userInfo ?
                 (
                     <Link to="/createPost">
-                        <Button variant="button btn-outline-light">
+                        <Button variant="button btn-outline-light" id="createPostNavBarBttn">
                             <i class="fas fa-plus"></i>
                         </Button>
                     </Link>

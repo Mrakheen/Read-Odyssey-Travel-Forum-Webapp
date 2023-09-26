@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import logoBig from "../../image/ribbitWithLogoBig.png";
 import cardArt from "../../image/cardArtBackground.jpg";
 import logoSmall from "../../image/greenFrog.png";
 import { Link, useNavigate } from "react-router-dom";
@@ -55,9 +54,6 @@ function Login() {
 
   return (
     <div id="loginPage" class="container-fluid px-0">
-      <Link to="/home" class="text-decoration-none" id="loginReturn">
-        <span class="font-weight-bold text-warning">{"    <<< Homepage"}</span>
-      </Link>
 
       <div id="loginContainer">
         <div class="card" id="loginCard">

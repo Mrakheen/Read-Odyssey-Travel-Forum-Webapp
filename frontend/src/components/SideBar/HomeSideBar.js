@@ -25,7 +25,7 @@ function HomeSideBar({ user }) {
             </div>
             <div class="row">
                 <div>
-                    <small><b>Subribbits with the most members</b></small>
+                    <small><b>Subredysseys with the most members</b></small>
                 </div>
             </div>
             <div class="row pt-2">

@@ -38,7 +38,7 @@ function NotificationButton({ }) {
 
     return (
         <div>
-            <Button variant="button btn-outline-light" onClick={handleShow}>
+            <Button variant="button btn-outline-light" id="notiBttn" onClick={handleShow}>
                 <i class="fas fa-bell"></i>
             </Button>
 

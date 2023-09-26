@@ -10,7 +10,6 @@ import {
 } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import logoBig from "../../image/ribbitWithLogoBig.png";
 import cardArt from "../../image/cardArtBackground.jpg";
 import logoSmall from "../../image/greenFrog.png";
 import { listPosts } from "../../actions/postActions";
@@ -94,9 +93,9 @@ function Home() {
                               <Link to="/createPost">
                                 <button
                                   type="button"
-                                  class="btn btn-outline-dark btn-sm btn-block"
+                                  class="btn  btn-sm btn-block custom-button"
                                 >
-                                  Create post on r/home
+                                  <strong>Create travel post on r/home</strong>
                                 </button>
                               </Link>
                             </div>

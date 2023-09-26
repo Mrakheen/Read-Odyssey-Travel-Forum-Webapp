@@ -23,4 +23,4 @@ def get(request):
 
     returnSubribbit = GetSubribbitsWithUserJoinStatus.get(copySerializedSubribbits, user)
 
-    return response('Subribbit list fetched successfully', returnSubribbit)
+    return response('Subredyssey list fetched successfully', returnSubribbit)

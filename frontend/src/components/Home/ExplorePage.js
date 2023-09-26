@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel, Toast } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import logoBig from '../../image/ribbitWithLogoBig.png';
 import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
 import { listPosts } from "../../actions/postActions"
@@ -19,7 +18,6 @@ import { DELETE_POST_RESET } from "../../actions/types";
 import SubribbitSideBar from "../SideBar/SubribbitSideBar";
 import InformationSideBar from "../SideBar/InformationSideBar";
 import HomeSubSideBar from "../SideBar/HomeSubSideBar";
-import ExplorePageSideBar from "../SideBar/ExplorePageSideBar";
 import CommunityNoPostsYet from "../Utilities/CommunityNoPostsYet";
 import GeneralGetErrorPage from "../Utilities/GeneralGetErrorPage";
 
@@ -83,7 +81,7 @@ function ExplorePage() {
                                                 <Form.Control
                                                     required
                                                     type="search"
-                                                    placeholder="Search a title on Explore"
+                                                    placeholder="Search a post title"
                                                     value={search}
                                                     onChange={(e) => setSearch(e.target.value)}
                                                 />
@@ -170,7 +168,6 @@ function ExplorePage() {
                                         }
                                     </div>
                                     <div class="col-md-5">
-                                        <ExplorePageSideBar />
                                         <HomeSideBar />
                                         <InformationSideBar />
                                     </div>

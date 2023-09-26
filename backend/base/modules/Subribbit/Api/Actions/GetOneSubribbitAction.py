@@ -12,9 +12,9 @@ def checkSubribbitId(id):
 
 def get(request, pk):
     if not checkSubribbitId(pk):
-        return error('Subribbit ID not found')
+        return error('Subredyssey ID not found')
         
     subribbits = Subribbit.objects.get(pk=pk)
 
     serializer = SubribbitSerializer(subribbits, many=False)
-    return response('Subribbit fetched successfully', serializer.data)
+    return response('Subredyssey fetched successfully', serializer.data)

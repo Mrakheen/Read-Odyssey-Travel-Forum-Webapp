@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel, Toast } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import logoBig from '../../image/ribbitWithLogoBig.png';
 import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
 import { listSubribbits } from "../../actions/subribbitActions";
@@ -67,7 +66,7 @@ function SubribbitList() {
                                                                 <Form.Control
                                                                     required
                                                                     type="search"
-                                                                    placeholder="Search subribbit name"
+                                                                    placeholder="Search subredyssey name"
                                                                     value={search}
                                                                     onChange={(e) => setSearch(e.target.value)}
                                                                 />

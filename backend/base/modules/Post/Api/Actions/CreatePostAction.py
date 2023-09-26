@@ -6,8 +6,8 @@ from better_profanity import profanity
 
 def sendNotification(postCreator, subribbitOwner, subribbitName, subribbit):
     if postCreator.id != subribbitOwner.id:
-        title = 'New post on your Subribbit'
-        text = 'u/' + postCreator.username + ' has just posted on your Subribbit r/' + subribbitName 
+        title = 'New post on your Subredyssey'
+        text = 'u/' + postCreator.username + ' has just posted on your Subredyssey r/' + subribbitName 
         link = '/community/' + str(subribbit.name)
         NotifyUser.send(subribbitOwner, title, text, link)
 
@@ -40,12 +40,12 @@ def create(request):
 
     if data['subribbit'] != 'home':
         if not checkSubribbitExist(data['subribbit']):
-            return error('Subribbit name not found')
+            return error('Subredyssey name not found')
 
         subribbit = Subribbit.objects.get(name=data['subribbit'])
 
         if not checkUserIsInSubribbit(user, subribbit):
-            return error('You are not assigned into this subribbit')
+            return error('You are not assigned into this subredyssey')
 
     post = Post.objects.create(
         user = user,

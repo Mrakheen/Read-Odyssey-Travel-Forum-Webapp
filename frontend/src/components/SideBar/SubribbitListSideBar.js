@@ -23,7 +23,7 @@ function SubribbitListSideBar({ user }) {
             <div class="row pt-2">
                 <div>
                     <small>
-                        Welcome to the communities page. Dive into any Subribbits or create your own!
+                        Welcome to the communities page. Dive into any Subredyssey or create your own!
                     </small>
                 </div>
             </div>
@@ -34,7 +34,7 @@ function SubribbitListSideBar({ user }) {
                         (
                             <div class="row">
                                 <Link to="/createSubribbit">
-                                    <button type="button" class="btn btn-outline-dark btn-sm btn-block">Create Subribbit</button>
+                                    <button type="button" class="btn btn-outline-dark btn-sm btn-block">Create Subredyssey</button>
                                 </Link>
                             </div>
                         )

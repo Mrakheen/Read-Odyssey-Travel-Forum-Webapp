@@ -32,8 +32,8 @@ function ShowMySubribbitsButton({ subribbit }) {
                 userInfo ?
                     (
                         <div>
-                            <button type="button" class="btn btn-secondary btn-sm btn" onClick={() => onClickFunction()}>
-                                <img src={logoSmall} id="logoSmallShowMySubribbitsButton" /> My Subribbits
+                            <button type="button" class="btn btn-secondary btn-sm btn nowrap-button"  onClick={() => onClickFunction()}>
+                                <img src={logoSmall} id="logoSmallShowMySubribbitsButton" /> {" "}<span>My Subredysseys</span>
                             </button>
                             <ShowMySubribbitsModal
                                 show={modalShow}

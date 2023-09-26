@@ -18,11 +18,11 @@ def get(request, name):
         return response('Home fetched')
 
     if not checkSubribbitId(name):
-        return error('Subribbit name not found')
+        return error('Subredyssey name not found')
 
     subribbits = Subribbit.objects.get(name=name)
 
     serializer = SubribbitSerializer(subribbits, many=False).data
     returnSubribbit = GetOneSubribbitWithUserJoinStatus.get(serializer, user)
 
-    return response('Subribbit fetched successfully', returnSubribbit)
+    return response('Subredyssey fetched successfully', returnSubribbit)

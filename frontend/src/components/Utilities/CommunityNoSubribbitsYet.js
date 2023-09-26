@@ -9,9 +9,9 @@ function CommunityNoSubribbitsYet() {
                 <center>
                     <i class="fas fa-frog"></i>
                     <br />
-                    <b>No Subribbits yet</b>
+                    <b>No Subredyssey yet</b>
                     <br />
-                    <small>Help expand Ribbit by creating communities!</small>
+                    <small>Help expand Redyssey by creating communities!</small>
                 </center>
             </div>
         </div>

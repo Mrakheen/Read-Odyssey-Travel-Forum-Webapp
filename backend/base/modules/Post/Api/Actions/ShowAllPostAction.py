@@ -64,7 +64,7 @@ def sortAndSearch(request, sub):
 
 def show(request, sub):
     if sub != '-' and sub != 'home' and not checkSubExist(sub):
-        return error('Sub Ribbit not found')
+        return error('Subredyssey not found')
     else:
         posts = sortAndSearch(request, sub)
         if type(posts) == str:

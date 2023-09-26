@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password
 from base.mail.AuthMail import userRegistered
 
 def sendNotification(user):
-    title = 'Welcome to Ribbit!'
+    title = 'Welcome to Redyssey!'
     text = 'Congratulations on creating your account, ' + user.username + '! You can now access user only features such as creating posts, joining Subribbits, and more. Enjoy.'
     NotifyUser.send(user, title, text)
 
