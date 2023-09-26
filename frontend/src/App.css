@@ -40,6 +40,20 @@ body {
 
 /* ------------------------------------------------------------------Login */
 
+#loginPage {
+  background: url("./image/backpack_travel_bag_126473_3840x2160.jpg");
+  /* background-color: rgb(252, 252, 252); */
+  background-size:     cover;
+  height: 100vh;
+  display: flexbox;
+  flex-direction: column;
+}
+
+#loginReturn {
+  position: absolute;
+  z-index: 1;
+}
+
 .logoBig {
   padding-top: 25%;
 }
@@ -52,7 +66,18 @@ body {
 
 #loginCard {
   /* background: url("./image/cardArtBackground.jpg") no-repeat center center; */
-  background-color: rgb(118, 195, 118);
+  background-color: transparent;
+  border-color: transparent;
+  width: 100%;
+  align-self: center;
+}
+
+#loginContainer {
+  width: 50%;
+  padding-left: 5%;
+  position: relative;
+  height: 100%;
+  display: flex;
 }
 
 #loginCardPaddingTop {
@@ -70,6 +95,7 @@ body {
 #forgotPass {
   font-size: 14px;
   text-decoration: none;
+  color: white;
 }
 
 #footerLinks {
