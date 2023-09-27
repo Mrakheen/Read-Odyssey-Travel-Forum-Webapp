@@ -47,12 +47,12 @@ body {
 #loginPage {
   background: url("./image/backpack_travel_bag_126473_3840x2160.jpg");
   /*background-color: rgba(255, 66, 66, 0.823); Add a background color */
-  background-color: #ff2a0098; /* Add a background color */
+  background-color: #f8272798; /* Add a background color */
   background-size: contain; /* Change the size of the image */
   background-position: right; /* Align the image to the right */
   background-repeat: no-repeat; /* Prevent image repetition */
   height: 100vh;
-  width:210vh;
+  width:197vh;
   display: flex;
   flex-direction: column;
 }
@@ -138,7 +138,7 @@ body {
   width: 100%;
 }
 .custom-button:hover {
-  background-color: #ff2a0098 !important;
+  background-color: #ff000098 !important;
   color: #fff !important; 
 }
 

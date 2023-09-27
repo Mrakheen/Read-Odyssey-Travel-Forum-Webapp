@@ -48,7 +48,7 @@ function UserNavbar() {
                 class="d-inline-block align-middle mr-2"
                 id="logoNavbar"
                 width="98"
-                height = "30"
+                height = "25"
               />
             </Navbar.Brand>
           </Link>
