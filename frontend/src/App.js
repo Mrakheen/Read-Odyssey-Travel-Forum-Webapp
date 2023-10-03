@@ -13,7 +13,6 @@ import CreateSubribbit from './components/Subribbit/CreateSubribbit';
 import SubribbitList from './components/Subribbit/SubribbitList';
 import Subribbit from './components/Subribbit/Subribbit';
 import User from './components/User/User'
-import ExplorePage from './components/Home/ExplorePage';
 import SendResetPasswordEmail from './components/ResetPassword/SendResetPasswordEmail';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import Layout from './components/Layout'
@@ -30,7 +29,6 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/community" element={<SubribbitList />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/explore" element={<ExplorePage />} />
           <Route path="/community/:sub" element={<Subribbit />} />
           <Route path="/post/:id" element={<PostDetail />} />
           <Route path="/createPost" element={<CreatePost />} />

@@ -32,7 +32,7 @@ function ConfirmDeletePostModal(props) {
             if (props.sub === 'home') {
                 navigate('/home')
             } else if (props.sub === '-') {
-                navigate('/explore')
+                navigate('/home')
             } else {
                 navigate(`/community/${props.sub}`)
             }

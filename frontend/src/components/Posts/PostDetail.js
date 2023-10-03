@@ -6,7 +6,6 @@ import Message from '../Utilities/Message';
 import UserNavbar from '../Navbar/UserNavbar';
 import { Card, Form, Row, Col, Button, FloatingLabe } from "react-bootstrap";
 import { Link, Navigate, useNavigate, useParams, useLocation } from 'react-router-dom';
-import Footer from '../Footer/Footer'
 import { createCommentAction, getAllCommentAction } from '../../actions/commentActions'
 import Comment from '../Comments/Comment'
 import { CREATE_COMMENT_RESET } from '../../actions/types';
@@ -14,7 +13,6 @@ import PostCardDropDown from '../Buttons/PostCardDropDown';
 import SuccessToast from '../Toasts/SuccessToast';
 import { DELETE_COMMENT_RESET } from '../../actions/types';
 import VotePostButton from '../Buttons/VotePostButton';
-import InformationSideBar from '../SideBar/InformationSideBar';
 import PostSideBar from '../SideBar/PostSideBar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -313,14 +311,12 @@ function PostDetail() {
                                     </div>
                                     <div class="col-md-5 px-5 pt-2">
                                         <PostSideBar sub={post.subRibbit} />
-                                        <InformationSideBar />
                                     </div>
                                 </div>
                             )
                     }
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

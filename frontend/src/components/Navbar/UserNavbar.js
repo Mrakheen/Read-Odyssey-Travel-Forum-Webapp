@@ -1,4 +1,5 @@
-import React from "react";
+//import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   Container,
@@ -11,15 +12,16 @@ import {
 import { LinkContainer } from "react-router-bootstrap";
 import logoSmall from "../../image/greenFrog.png";
 import logoName from "../../image/logoName.png";
+import homeIcon from "../../image/home_icon.png";
+import communityIcon from "../../image/community_icon.png";
 import { useDispatch, useSelector } from "react-redux";
 import homeLogo from "../../image/home-solid.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../actions/userActions";
 import NotificationButton from "../Notification/NotificationButton";
-
 import CreatePostButtonNavbar from "../Posts/CreatePostButtonNavbar";
 
-function UserNavbar() {
+function UserNavbar({ onSearch }) {
   // get userLogin from state
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -30,26 +32,22 @@ function UserNavbar() {
   const logoutHandler = () => {
     dispatch(logout());
   };
+  
 
   return (
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark custom-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-white bg-white custom-navbar">
       <Container>
         <div class="pt-1">
           <Link to="/">
             <Navbar.Brand>
-              <img
-                src={logoSmall}
-                class="d-inline-block align-middle mr-2"
-                id="logoNavbar"
-                width="65"
-              />
-              <img
-                src={logoName}
-                class="d-inline-block align-middle mr-2"
-                id="logoNavbar"
-                width="98"
-                height = "25"
-              />
+            <img
+                  src={logoSmall}
+                  className="d-inline-block ml-1"  // Add a left margin
+                  id="logoNavbar"
+                  width="175"
+                  height="40"
+                  alt="Logo Small"
+            />
             </Navbar.Brand>
           </Link>
         </div>
@@ -68,52 +66,27 @@ function UserNavbar() {
           {/* Need to set this navbar as a separate ul first, and then give a me-auto. Check the next ul */}
           <ul class="navbar-nav me-auto">
             <li class="nav-item active">
-              <Link to="/home">
-                <button type="button" class="btn btn-dark" id="buttonHome">
-                  <li class="nav-item active">
-                    <i className="fas fa-lg"></i>
-                    &nbsp;&nbsp;<strong>Home</strong>
-                    <span class="sr-only">(current)</span>
-                  </li>
-                </button>
-              </Link>
+            <Link to="/home">
+              <button type="button" className="btn btn-dark" id="buttonHome">
+                <img src={homeIcon} alt="Home" width="30" height="30" />
+                <span className="sr-only">(current)</span>
+              </button>
+            </Link>
             </li>
             
             <li class="nav-item active">
               <Link to="/subribbits">
-                <button
-                  type="button"
-                  class="btn btn-dark"
-                  id="buttonCommunities"
-                >
-                  <li class="nav-item active">
-                    <i className="fas fa-lg"></i>
-                    &nbsp;&nbsp;<strong>Communities</strong>
-                    <span class="sr-only">(current)</span>
-                  </li>
-                </button>
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to="/explore">
-                <button
-                  type="button"
-                  class="btn btn-dark"
-                  id="buttonCommunities"
-                >
-                  <li class="nav-item active">
-                    <i class="fas fa-lg"></i>
-                    &nbsp;&nbsp;<strong>Search Posts</strong>
-                    <span class="sr-only">(current)</span>
-                  </li>
+                <button type="button" className="btn btn-dark" id="buttonHome">
+                  <img src={communityIcon} alt="Home" width="30" height="30" />
+                  <span className="sr-only">(current)</span>
                 </button>
               </Link>
             </li>
           </ul>
-          <ul class="navbar-nav navbar-right">
-            <CreatePostButtonNavbar />
-            &nbsp;&nbsp;&nbsp;
-          </ul>
+            <ul class="navbar-nav navbar-right">
+              <CreatePostButtonNavbar />
+              &nbsp;&nbsp;&nbsp;
+            </ul>
           <ul class="navbar-nav navbar-right">
             {userInfo ? <NotificationButton /> : null}
             &nbsp;
@@ -159,3 +132,5 @@ function UserNavbar() {
 }
 
 export default UserNavbar;
+
+

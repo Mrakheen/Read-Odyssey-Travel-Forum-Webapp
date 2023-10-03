@@ -1,13 +1,18 @@
+
 body {
   /* background-color: #fbfcc5 !important; */
   /* background: url("./image/backYellow.jpg") no-repeat center center; */
   /* background-color: #ffc107 !important; */
-  background-color: #1d1d1d !important;
+  background-color: #dfd4d4ad !important;
   background-attachment: fixed;
 }
 
 .custom-navbar {
-  background-color: #000 !important; 
+  background-color: #ffffffc6 !important;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 60px;
+  border-bottom: 1px solid #1e121245;
 }
 
 .footer {
@@ -47,14 +52,15 @@ body {
 #loginPage {
   background: url("./image/backpack_travel_bag_126473_3840x2160.jpg");
   /*background-color: rgba(255, 66, 66, 0.823); Add a background color */
-  background-color: #f8272798; /* Add a background color */
+  background-color: #f61f1fde; /* Add a background color */
   background-size: contain; /* Change the size of the image */
   background-position: right; /* Align the image to the right */
   background-repeat: no-repeat; /* Prevent image repetition */
   height: 100vh;
-  width:197vh;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+
 }
 
 
@@ -144,7 +150,8 @@ body {
 
 #chooseFilter {
   width: 100%;
-  background-color: black;
+  background-color: #dfd4d4ad;
+  border: none;
 }
 
 #searchTitle {
@@ -176,60 +183,66 @@ body {
 }
 
 #buttonHome {
-  background-color: #000 ;
+  background-color: #dfd4d4ad;
   border: none;
-  max-width: 200px;
   height: 100%;
-  padding-right: 20px;
   transition: background-color 0.3s ease; 
+  margin-right: 10px;
+  margin-left: 10px;
 }
 #buttonHome:hover {
-  background-color: #ff2a0098; 
+  border-bottom: 3px solid #950000;
+  border-radius: 0px;
 }
 
 #buttonCommunities {
-  background-color: #000;
+  background-color: #ffffff;
+  color: #000;
   border: none;
-  max-width: 400px;
   height: 100%;
-  padding-right: 20px;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
+  margin-left: 10px; 
 }
 #buttonCommunities:hover {
   background-color: #ff2a0098;
 }
 
 .Profile-Bttn{
-  background-color: #000 !important; 
+  background-color: #ffffff !important; 
   color: #fff; 
   border: none !important;
-  transition: border 0.3s ease;
-  height:66px;
-  width: 230px;
+  height: 85%;
+  margin-left: none;
+  margin-right:none;
 }
 .Profile-Bttn:hover {
-  border: 0.5px solid #9f9f9f79 !important; 
+  border-bottom: 3px solid #950000;
+  border-radius: 0px;
 }
 
 #createPostNavBarBttn{
-  transition: background-color 0.3s ease; 
+  background-color: #dfd4d4ad;
+  color: #950000;
 }
 #createPostNavBarBttn:hover {
-  background-color: #ff2a0098;
+  border-bottom: 3px solid #950000;
+  border-radius: 0px;
 }
 
 #notiBttn{
-  transition: background-color 0.3s ease; 
+  background-color: #dfd4d4ad;
+  color: #950000;
 }
 #notiBttn:hover {
-  background-color: #ff2a0098;
+  border-bottom: 3px solid #950000;
+  border-radius: 0px;
 }
 
 #profileLogo {
-  max-width: 45px;
-  border-radius: 50%;
-  /* border: 1px solid white; */
-  background-color: #000000;
+  max-width: 35px;
+  border: none;
+  margin-left: 0px;
+  background-color: #ffffff;
 }
 
 /* ---------------------------------------------------------------------Post */
@@ -562,15 +575,6 @@ body {
   color: black;
 }
 
-/* --------------------------------------------------------------------------InformationSideBar */
-
-#informationSideBarSize {
-  width: 100%;
-  position: -webkit-sticky;
-  /* Safari */
-  position: sticky;
-  top: 100px;
-}
 
 /* ---------------------------------------------------------------------------PostSideBar */
 
@@ -611,12 +615,6 @@ body {
   }
 }
 
-/* ---------------------------------------------------------------------------HomeSubSideBar */
-
-#homeSubSideBarExploreLink {
-  text-decoration: none;
-  color: black;
-}
 
 /* ---------------------------------------------------------------------------Landing Pages CSS */
 

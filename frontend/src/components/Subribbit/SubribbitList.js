@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel, Toast } from "react-bootstrap";
-import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
@@ -16,7 +15,6 @@ import SuccessToast from "../Toasts/SuccessToast";
 import { DELETE_POST_RESET } from "../../actions/types";
 import SubribbitCard from "./SubribbitCard";
 import SubribbitListSideBar from "../SideBar/SubribbitListSideBar";
-import InformationSideBar from "../SideBar/InformationSideBar";
 import CommunityNoSubribbitsYet from "../Utilities/CommunityNoSubribbitsYet";
 import GeneralGetErrorPage from "../Utilities/GeneralGetErrorPage";
 
@@ -116,7 +114,6 @@ function SubribbitList() {
                                                     </div>
                                                     <div class="col-md-5">
                                                         <SubribbitListSideBar />
-                                                        <InformationSideBar />
                                                     </div>
                                                 </div>
                                             )
@@ -156,7 +153,6 @@ function SubribbitList() {
 
             </div>
 
-            <Footer />
         </div>
     );
 }

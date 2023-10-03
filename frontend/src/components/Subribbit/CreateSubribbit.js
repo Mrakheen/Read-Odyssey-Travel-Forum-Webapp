@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel } from "react-bootstrap";
-import Footer from '../Footer/Footer'
 import { useDispatch, useSelector } from "react-redux";
 import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
@@ -10,7 +9,6 @@ import Message from '../Utilities/Message';
 import { createSubribbitAction } from "../../actions/subribbitActions";
 import store from "../../store";
 import UserNavbar from "../Navbar/UserNavbar";
-import InformationSideBar from "../SideBar/InformationSideBar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CREATE_SUBRIBBIT_RESET } from "../../actions/types";
@@ -146,7 +144,6 @@ function CreateSubribbit() {
 
                                         </div>
                                         <div class="col-md-5 px-5 pt-2">
-                                            <InformationSideBar />
                                         </div>
                                     </div>
                                 )
@@ -184,7 +181,6 @@ function CreateSubribbit() {
                 </div>
             </div>
 
-            <Footer />
         </div>
     );
 }

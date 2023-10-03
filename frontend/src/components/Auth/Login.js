@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel } from "react-bootstrap";
-import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import cardArt from "../../image/cardArtBackground.jpg";
 import logoSmall from "../../image/greenFrog.png";
@@ -58,7 +57,7 @@ function Login() {
       <div id="loginContainer">
         <div class="card" id="loginCard">
           <h3 className="d-flex mt-3 mb-4 h1 text-white">
-            Let's start a new adventure
+            <strong>Let's start a new adventure</strong>
           </h3>
           <br />
           <ToastContainer />

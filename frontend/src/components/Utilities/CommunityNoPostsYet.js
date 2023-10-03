@@ -22,7 +22,7 @@ function CommunityNoPostsYet({ sub }) {
                             )
                             :
                             (
-                                <b>Explore doesn't have any posts yet</b>
+                                <b>No posts yet</b>
                             )
                     }
                     <br />

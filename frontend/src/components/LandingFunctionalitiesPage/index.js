@@ -1,6 +1,5 @@
 import React from 'react';
 import FunctionAuthentication from './FunctionAuthentication';
-import FunctionNavBarPages from './FunctionNavBarPages';
 import FunctionPosts from './FunctionPosts';
 import FunctionPostVote from './FunctionPostVote';
 import FunctionPostComment from './FunctionPostComment';
@@ -25,8 +24,6 @@ const index = () => {
                                 <small>Functions labelled with <span class="badge badge-secondary">AUTH</span> indicates that their access is limited to only authenticated users. Click on the timestamps to jump to a specific part of the video.</small>
                                 <hr />
                                 <FunctionAuthentication />
-                                <hr />
-                                <FunctionNavBarPages />
                                 <hr />
                                 <FunctionPosts />
                                 <hr />

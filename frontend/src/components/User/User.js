@@ -4,14 +4,12 @@ import { Link, Navigate, useNavigate, useParams, useLocation } from 'react-route
 import UserNavbar from '../Navbar/UserNavbar'
 import { useDispatch, useSelector } from "react-redux";
 import Post from '../Posts/Post'
-import Footer from '../Footer/Footer'
 import UserCard from "./UserCard";
 import { userDetailsAction } from '../../actions/userActions';
 import { listUserPostsAction } from '../../actions/postActions';
 import Loader from '../Utilities/Loader';
 import Message from '../Utilities/Message';
 import SuccessToast from '../Toasts/SuccessToast';
-import InformationSideBar from '../SideBar/InformationSideBar';
 import UserNoPostsYet from '../Utilities/UserNoPostsYet';
 import GeneralGetErrorPage from '../Utilities/GeneralGetErrorPage';
 
@@ -132,7 +130,6 @@ function User() {
                                                     </div>
                                                     <div class="col-md-5">
                                                         <UserCard user={user} />
-                                                        <InformationSideBar />
                                                     </div>
                                                 </div>
                                             )
@@ -168,7 +165,6 @@ function User() {
 
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel } from "react-bootstrap";
-import Footer from '../Footer/Footer'
 import { useDispatch, useSelector } from "react-redux";
 import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
@@ -12,7 +11,6 @@ import store from "../../store";
 import UserNavbar from "../Navbar/UserNavbar";
 import { listOwnedAndJoinedSubribbits } from "../../actions/subribbitActions";
 import { useLocation } from "react-router-dom";
-import InformationSideBar from "../SideBar/InformationSideBar";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CREATE_POST_RESET } from "../../actions/types";
@@ -197,7 +195,6 @@ function CreatePost() {
 
                                             </div>
                                             <div class="col-md-5 px-5 pt-2">
-                                                <InformationSideBar />
                                             </div>
                                         </div>
                                     )
@@ -236,7 +233,6 @@ function CreatePost() {
                 </div>
             </div >
 
-            <Footer />
         </div >
     );
 }
