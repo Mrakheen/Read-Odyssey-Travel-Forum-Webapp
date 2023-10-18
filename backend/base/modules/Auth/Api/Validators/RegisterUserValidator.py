@@ -11,11 +11,11 @@ def validate(request):
     checkEmailExist = User.objects.filter(email = data['email'])
     checkUsernameExist = User.objects.filter(username = data['username'])
 
-    if not re.match('^[a-zA-Z0-9]+$', data['username']): 
+    if not re.match('^[a-zA-Z0-9@.]+$', data['username']): 
         return validationError('Username cannot contain spaces or special characters')
 
-    if len(data['username']) > 12:
-        return validationError('Username cannot be more than 12 characters')
+    if len(data['username']) > 40:
+        return validationError('Username cannot be more than 40 characters')
 
     if data['password'] != data['c_password']:
         return validationError('Confirm password does not match')

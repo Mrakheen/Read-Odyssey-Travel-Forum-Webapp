@@ -11,6 +11,7 @@ import store from "../../store";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { USER_LOGOUT } from "../../actions/types";
+import GoogleLoginButton from "../Buttons/GoogleLoginButton";
 
 function Login() {
   const navigate = useNavigate();
@@ -53,7 +54,6 @@ function Login() {
 
   return (
     <div id="loginPage" class="container-fluid px-0">
-
       <div id="loginContainer">
         <div class="card" id="loginCard">
           <h3 className="d-flex mt-3 mb-4 h1 text-white">
@@ -90,7 +90,7 @@ function Login() {
             </Form.Group>
             <Row>
               <div class="pl-3 mb-5">
-                {loading ? (
+                {/* {loading ? (
                   <div id="forgotPass">
                     Forgot your&nbsp;
                     <span
@@ -114,18 +114,21 @@ function Login() {
                     </Link>
                     ?
                   </div>
-                )}
+                )} */}
               </div>
             </Row>
-            <div className="d-flex justify-content-center align-items-center">
+            <div id="flexSigninButton">
               {loading ? (
                 <Button type="submit" disabled className="mb-2 mt-3 w-100 btn">
                   <Loader />
                 </Button>
               ) : (
-                <Button type="submit" className="mb-2 mt-3 w-100 btn">
-                  Log In
-                </Button>
+                <div>
+                  <Button type="submit" className="mb-2 my-2 w-100 btn">
+                    Log In
+                  </Button>
+                  <GoogleLoginButton />
+                </div>
               )}
             </div>
           </Form>

@@ -69,7 +69,6 @@ function Login() {
 
   return (
     <div id="loginPage" class="container-fluid px-0">
-     
       <div id="loginContainer">
         <div class="card" id="loginCard">
           <h3 className="d-flex mt-3 mb-4 h1 text-white">Ready to join in</h3>

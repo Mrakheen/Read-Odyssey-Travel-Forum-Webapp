@@ -1,6 +1,5 @@
+## :airplane: Getting Started
 
-
-## :airplane: Getting Started 
 Setting up <b>Redyssey</b> on your local machine without Docker? Here are the instructions:
 
 <details>
@@ -18,6 +17,8 @@ $ git clone https://github.com/Mrakheen/travel-website-project-CSE-3311.git
 ```sh
 $ python -m venv myenv
 $ myenv\Scripts\activate
+or
+$ source myenv/bin/activate
 ```
 
 3. Install Redyssey's dependencies
@@ -89,7 +90,7 @@ You can now view frontend in the browser.
 ```
 
 **That's it!**
- 
+
 </details>
 
 <details>
@@ -104,7 +105,9 @@ $ python manage.py test
 ```
 
 ## :recycle: Continuous Testing <img src="https://github.com/juliantjg/Ribbit/actions/workflows/django.yml/badge.svg">
-I've set up Git Actions for this repository to run automated tests on pushes/PRs made on the `main`. 
+
+I've set up Git Actions for this repository to run automated tests on pushes/PRs made on the `main`.
+
 <details>
  <summary><b>View build snapshot</b></summary>
  <br />
@@ -123,5 +126,3 @@ I've set up Git Actions for this repository to run automated tests on pushes/PRs
 - <img src="https://user-images.githubusercontent.com/53683415/223313813-78e199cc-9a22-4603-99d3-6b50e2bcec0f.png" width="12"> <b><a href="https://www.djangoproject.com/">Django</a> -</b> Django is a free and open-source, Python-based web framework that follows the model–template–views architectural pattern.
 - <img src="https://user-images.githubusercontent.com/53683415/223313847-3cf57f1a-11fd-4963-a1df-b3895e478119.png" width="12"> <b><a href="https://redux.js.org/">Redux</a> -</b> Redux is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces.
 - <img src="https://user-images.githubusercontent.com/53683415/224954200-33f50594-34e2-43b6-81e9-f3c0bb269f97.png" width="12"> <b><a href="https://www.docker.com/">Docker</a> -</b> Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
-
-

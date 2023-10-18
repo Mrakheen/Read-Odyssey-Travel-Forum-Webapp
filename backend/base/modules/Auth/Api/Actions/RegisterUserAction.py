@@ -13,7 +13,7 @@ def sendNotification(user):
 def register(request):
     data = request.data
 
-    gravatarURL = CreateGravatar.create(str(data['email']))
+    gravatarURL = data['imageURL'] if data['imageURL'] else CreateGravatar.create(str(data['email']))
 
     user = User.objects.create(
         username=data['username'],
@@ -28,10 +28,10 @@ def register(request):
 
     sendNotification(user)
 
-    userRegistered(
-        user.username,
-        user.email
-    )
+    # userRegistered(
+    #     user.username,
+    #     user.email
+    # )
 
     serializer = UserSerializer(user, many=False)
     return response('Registration successful. A welcome email has been sent to your address.', serializer.data)

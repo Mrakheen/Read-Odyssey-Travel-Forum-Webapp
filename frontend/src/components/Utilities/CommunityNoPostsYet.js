@@ -1,36 +1,24 @@
-import React from 'react';
+import React from "react";
 
 function CommunityNoPostsYet({ sub }) {
+  function isCommunity() {
+    if (sub !== undefined) return true;
+    return false;
+  }
 
-    function isCommunity() {
-        if (sub !== '-') return true;
-        return false;
-    }
-
-    return (
-        <div>
-            <div id="communityNoPostsYetPaddingTop">
-            </div>
-            <div>
-                <center>
-                    <i class="fas fa-quote-right"></i>
-                    <br />
-                    {
-                        isCommunity() ?
-                            (
-                                <b>r/{sub} doesn't have any posts yet</b>
-                            )
-                            :
-                            (
-                                <b>No posts yet</b>
-                            )
-                    }
-                    <br />
-                    <small>Start creating posts!</small>
-                </center>
-            </div>
-        </div>
-    );
+  return (
+    <div id="communityNoPostsYet">
+      <i class="fas fa-quote-right"></i>
+      <br />
+      {isCommunity() ? (
+        <b>{sub} doesn't have any posts yet</b>
+      ) : (
+        <b>No posts yet</b>
+      )}
+      <br />
+      <small>Start creating posts!</small>
+    </div>
+  );
 }
 
 export default CommunityNoPostsYet;

@@ -1,19 +1,16 @@
-import React from 'react';
+import React from "react";
+import { GetUsername } from "./GetUsername";
 
 function UserNoPostsYet({ username }) {
-    return (
-        <div>
-            <div id="userNoPostsYetPaddingTop">
-            </div>
-            <div>
-                <center>
-                    <i class="fas fa-quote-right"></i>
-                    <br />
-                    <b>u/{username} hasn't posted anything</b>
-                </center>
-            </div>
-        </div>
-    );
+  return (
+    <div id="userNoPostsYet">
+      <center>
+        <i class="fas fa-quote-right"></i>
+        <br />
+        <p>{username} hasn't posted anything</p>
+      </center>
+    </div>
+  );
 }
 
 export default UserNoPostsYet;

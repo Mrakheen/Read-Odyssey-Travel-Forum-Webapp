@@ -20,6 +20,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../actions/userActions";
 import NotificationButton from "../Notification/NotificationButton";
 import CreatePostButtonNavbar from "../Posts/CreatePostButtonNavbar";
+import { GetUsername } from "../Utilities/GetUsername";
 
 function UserNavbar({ onSearch }) {
   // get userLogin from state
@@ -32,7 +33,9 @@ function UserNavbar({ onSearch }) {
   const logoutHandler = () => {
     dispatch(logout());
   };
-  
+
+  // const realUsername = GetUsername(userInfo.username);
+  // console.log(realUsername);
 
   return (
     <nav class="navbar fixed-top navbar-expand-lg navbar-white bg-white custom-navbar">
@@ -40,14 +43,14 @@ function UserNavbar({ onSearch }) {
         <div class="pt-1">
           <Link to="/">
             <Navbar.Brand>
-            <img
-                  src={logoSmall}
-                  className="d-inline-block ml-1"  // Add a left margin
-                  id="logoNavbar"
-                  width="175"
-                  height="40"
-                  alt="Logo Small"
-            />
+              <img
+                src={logoSmall}
+                className="d-inline-block ml-1" // Add a left margin
+                id="logoNavbar"
+                width="150"
+                height="35"
+                alt="Logo Small"
+              />
             </Navbar.Brand>
           </Link>
         </div>
@@ -66,27 +69,27 @@ function UserNavbar({ onSearch }) {
           {/* Need to set this navbar as a separate ul first, and then give a me-auto. Check the next ul */}
           <ul class="navbar-nav me-auto">
             <li class="nav-item active">
-            <Link to="/home">
-              <button type="button" className="btn btn-dark" id="buttonHome">
-                <img src={homeIcon} alt="Home" width="30" height="30" />
-                <span className="sr-only">(current)</span>
-              </button>
-            </Link>
+              <Link to="/home">
+                <button type="button" className="btn btn-dark" id="buttonHome">
+                  <img src={homeIcon} alt="Home" width="30" height="30" />
+                  <span className="sr-only">(current)</span>
+                </button>
+              </Link>
             </li>
-            
-            <li class="nav-item active">
+
+            {/* <li class="nav-item active">
               <Link to="/subribbits">
                 <button type="button" className="btn btn-dark" id="buttonHome">
                   <img src={communityIcon} alt="Home" width="30" height="30" />
                   <span className="sr-only">(current)</span>
                 </button>
               </Link>
-            </li>
+            </li> */}
           </ul>
-            <ul class="navbar-nav navbar-right">
-              <CreatePostButtonNavbar />
-              &nbsp;&nbsp;&nbsp;
-            </ul>
+          <ul class="navbar-nav navbar-right">
+            <CreatePostButtonNavbar />
+            &nbsp;&nbsp;&nbsp;
+          </ul>
           <ul class="navbar-nav navbar-right">
             {userInfo ? <NotificationButton /> : null}
             &nbsp;
@@ -94,14 +97,16 @@ function UserNavbar({ onSearch }) {
           {/* So here is the next ul, where I put the navbar-right in a separate ul for the user dropdown */}
           <ul class="navbar-nav navbar-right">
             <li class="nav-item">
-              <button type="button" 
-              class="btn btn-dark Profile-Bttn"
-              >
+              <button type="button" class="btn btn-dark Profile-Bttn">
                 {userInfo ? (
                   <NavDropdown
                     title={
                       <>
-                        <img src={userInfo.gravatarURL} id="profileLogo" />
+                        <img
+                          src={userInfo.gravatarURL}
+                          id="profileLogo"
+                          alt=""
+                        />
                         &nbsp;&nbsp;&nbsp;&nbsp;{userInfo.username}
                       </>
                     }
@@ -132,5 +137,3 @@ function UserNavbar({ onSearch }) {
 }
 
 export default UserNavbar;
-
-

@@ -83,7 +83,7 @@ body {
 }
 
 #loginContainer {
-  width: 50%;
+  width: 600px;
   padding-left: 5%;
   position: relative;
   height: 100%;
@@ -150,8 +150,9 @@ body {
 
 #chooseFilter {
   width: 100%;
-  background-color: #dfd4d4ad;
-  border: none;
+  background-color: rgba(39, 39, 39, 0.603);
+  border-color: rgba(255, 255, 255, 0.422);
+  /* border: none; */
 }
 
 #searchTitle {
@@ -166,11 +167,24 @@ body {
   cursor: pointer;
 }
 
-#communityNoPostsYetPaddingTop {
-  min-height: 20vh;
+#communityNoPostsYet {
+  background: rgba(39, 39, 39, 0.603);
+  color: white;
+  text-align: center;
+  padding: 75px 0px 75px 0px;
+  border-radius: 5px;
 }
 
 /* -------------------------------------------------------------------User */
+
+#userNoPostsYet {
+  background-color: rgba(39, 39, 39, 0.603);
+  border: 1px solid rgba(255, 255, 255, 0.422);
+  border-radius: 5px;
+  padding: 90px 0px 90px 0px;
+  color: white;
+  font-weight: bold;
+}
 
 #userNoPostsYetPaddingTop {
   min-height: 20vh;
@@ -248,11 +262,19 @@ body {
 /* ---------------------------------------------------------------------Post */
 
 #postCardLeft {
-  background-color: #c3290af8;
+  background-color: transparent;
+  color: white;
+  border: 1px solid transparent;
+}
+
+#postCardMain {
+  background-color: rgba(39, 39, 39, 0.603);;
+  border: 1px solid black;
+  /* color: white; */
 }
 
 #postCardMain:hover {
-  border: 1px solid #ff2a0098;
+  border: 1px solid rgba(255, 255, 255, 0.422);
 }
 
 #postCardBottomRight {
@@ -264,12 +286,18 @@ body {
 }
 
 #postCardSize {
+  background: transparent;
   width: 100%;
+}
+
+#postCardSize:hover #postCardContent {
+  max-height: 100px;
 }
 
 #postCardUsername {
   text-decoration: none;
-  color: grey;
+  color: white;
+  font-weight: bold;
 }
 
 #postCardUsername:hover {
@@ -278,7 +306,7 @@ body {
 
 #postCardSubRibbit {
   text-decoration: none;
-  color: grey;
+  color: white;
 }
 
 #postCardSubRibbit:hover {
@@ -287,24 +315,29 @@ body {
 
 #postCardHeader {
   font-size: 15px;
-  color: grey;
+  color: white;
   text-decoration: none;
+  background: transparent;
 }
 
 #postCardBody {
   text-decoration: none;
-  color: black;
+  color: white;
+  background: transparent;
 }
 
 #postCardContent {
-  white-space: nowrap;
+  white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 400px;
+  max-height: 50px;
+  max-width: 100%;
+  transition: ease-in-out 150ms;
 }
 
 #postCardFooter {
-  background-color: white;
+  background-color: transparent;
+  color: white;
   font-size: 12px;
 }
 
@@ -312,7 +345,8 @@ body {
 
 #postDetailUsername {
   text-decoration: none;
-  color: black;
+  color: white;
+  font-weight: bold;
 }
 
 #postDetailUsername:hover {
@@ -321,7 +355,8 @@ body {
 
 #postDetailSubRibbit {
   text-decoration: none;
-  color: black;
+  color: white;
+  font-weight: bold;
 }
 
 #postDetailSubRibbit:hover {
@@ -330,6 +365,9 @@ body {
 
 #postDetailCard {
   width: 100%;
+  background-color: rgba(39, 39, 39, 0.603);
+  border-color: rgba(255, 255, 255, 0.422);
+  color: white;
 }
 
 #postStats {
@@ -342,11 +380,17 @@ body {
 
 #noCommentsYet {
   width: 100%;
-  color: grey;
+  background-color: rgba(39, 39, 39, 0.603);
+  border-color: rgba(255, 255, 255, 0.422);
+  color: white;
+  padding: 100px 0;
 }
 
 #allComments {
   width: 100%;
+  background-color: rgba(39, 39, 39, 0.603);
+  border-color: rgba(255, 255, 255, 0.422);
+  color: white;
 }
 
 /* ---------------------------------------------------------------------Create Post */
@@ -357,6 +401,8 @@ body {
 
 #writePost {
   width: 100%;
+  background-color: transparent;
+  border: none;
 }
 
 #defaultCommunityIsHome {
@@ -365,10 +411,24 @@ body {
   font-size: 12px;
 }
 
+label {
+  
+}
+
+#createPostForm {
+  background-color: rgba(39, 39, 39, 0.603);
+  border: 1px solid rgba(255, 255, 255, 0.422);
+  color: white;
+  border-radius: 5px;
+}
+
 /* ----------------------------------------------------------------------Comment */
 
-#commentCard:hover {
+#commentCard {
   border: 1px solid #000;
+  background: transparent;
+  color: white;
+  padding: 0;
 }
 
 #commentHeader {
@@ -377,7 +437,7 @@ body {
 
 #commentUsername {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 #commentUsername:hover {
@@ -393,6 +453,14 @@ body {
 
 #userCardSize {
   width: 100%;
+  background-color: rgba(39, 39, 39, 0.603);
+  border-color: rgba(255, 255, 255, 0.422);
+}
+
+#userCardName {
+  color:white;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 #profileSettingButton {
@@ -400,13 +468,18 @@ body {
 }
 
 #userCardProfileImage {
-  border: 5px solid #000;
+  /* border: 5px solid #000; */
+  position: relative;
   background-color: #b1f3b1;
-  border-radius: 50%;
+  border-radius: 5%;
+  width: 160px;
+  bottom: 55px;
+  right: 30px;
 }
 
 #updateUserProfileButton {
   cursor: pointer;
+  color: white;
 }
 
 /* -------------------------------------------------------------------------HomeSideBar */
@@ -446,6 +519,7 @@ body {
 
 #postCardDropDown {
   font-size: 17px;
+  color: white;
 }
 
 /* -------------------------------------------------------------------------SuccessToast */
@@ -463,33 +537,69 @@ body {
 /* ---------------------------------------------------------------------------VotePostButton */
 
 #unauthenticatedVotePostButton {
-  color: #000;
+  color: white;
 }
 
 #votePostButtonSize {
+  color: white;
   font-size: 14px;
 }
 
 /* ---------------------------------------------------------------------------SubribbitCard */
 
 #subribbitCardLink {
+  /* background-color: transparent; */
   text-decoration: none !important;
-  color: black;
+  color: white;
+}
+
+#subribbitCardMain{
+  width: calc(100% - 24px);
+  margin-top: 3px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-left: 1px solid white;
 }
 
 #subribbitCardMain:hover {
-  border: 1px solid #000;
-  background-color: lightgoldenrodyellow;
+  border: 1px solid white;
 }
 
 /* ---------------------------------------------------------------------------SubribbitSideBar */
 
 #subribbitSideBarSize {
   width: 100%;
+  background: rgba(39, 39, 39, 0.603);
+  border-color: rgba(255, 255, 255, 0.422);
+  color: white;
 }
 
 #subribbitSidebarDescription {
   font-size: 90%;
+}
+
+#subribbitList {
+  background: rgba(39, 39, 39, 0.603);
+  margin: 0 40px;
+  border-radius: 5px;
+  border: solid 1px rgba(255, 255, 255, 0.422);
+  position: sticky;
+  top: 85px;
+}
+
+#subribbitInfo {
+  background: rgba(39, 39, 39, 0.603);
+  margin: 0 40px;
+  border-radius: 5px;
+  border: solid 1px rgba(255, 255, 255, 0.422);
+  position: sticky;
+  top: 85px;
+}
+
+#subribbitInfoText {
+  color: white;
+  font-weight: bold;
+  font-size: 14.5px;
 }
 
 /* ---------------------------------------------------------------------------SubribbitMembers */
@@ -526,7 +636,10 @@ body {
 }
 
 #showSubribbitMembersForMembersButton {
-  color: white;
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 /* ---------------------------------------------------------------------------ShowMySubribbits */
@@ -580,6 +693,14 @@ body {
 
 #postSideBarGoToSub {
   width: 100%;
+}
+
+/* -------------------------------------------------------------------------CreateSubribbit */
+
+#createSubribbitForm {
+  background: rgba(39, 39, 39, 0.603);
+  border: 1px solid rgba(255, 255, 255, 0.422);
+  border-radius: 5px;
 }
 
 /* ---------------------------------------------------------------------------TopSubribbits */
@@ -1029,3 +1150,13 @@ a.footer__socials--link svg {
   text-decoration: underline;
 }
 
+#loginRequireBar {
+  background: rgba(39, 39, 39, 0.603);
+  border-radius: 5px;
+  border: solid 1px rgba(255, 255, 255, 0.422);
+  color: white;
+}
+
+#buttonDiv {
+  /* width: 600px; */
+}

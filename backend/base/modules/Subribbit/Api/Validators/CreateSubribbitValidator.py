@@ -8,11 +8,11 @@ def validate(request):
     if data.get('name') == None:
         return validationError('Please provide a subribbit name')
 
-    if not re.match('^[a-zA-Z0-9]+$', data['name']): 
+    if not re.match('^[a-zA-Z0-9 ,-]+$', data['name']): 
         return validationError('Subribbit name cannot contain spaces or special characters')
     
-    if len(data['name']) > 15:
-        return validationError('Subribbit name cannot be more than 15 characters')
+    if len(data['name']) > 50:
+        return validationError('Subribbit name cannot be more than 50 characters')
     
     if data.get('description') == None:
         return validationError('Please provide a description')
