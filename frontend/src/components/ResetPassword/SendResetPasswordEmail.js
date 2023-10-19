@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Form, Row, Col, Button, FloatingLabel } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import cardArt from '../../image/cardArtBackground.jpg';
 import logoSmall from '../../image/greenFrog.png'
 import { Link, useNavigate } from 'react-router-dom';
 import Loader from '../Utilities/Loader';

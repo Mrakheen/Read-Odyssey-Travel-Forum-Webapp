@@ -9,7 +9,6 @@ import {
   Toast,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import cardArt from "../../image/cardArtBackground.jpg";
 import logoSmall from "../../image/greenFrog.png";
 import { listPosts } from "../../actions/postActions";
 import { subribbitDetailAction } from "../../actions/subribbitActions";

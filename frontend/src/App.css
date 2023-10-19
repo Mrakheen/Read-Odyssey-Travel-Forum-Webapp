@@ -5,6 +5,9 @@ body {
   /* background-color: #ffc107 !important; */
   background-color: #dfd4d4ad !important;
   background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden
 }
 
 .custom-navbar {
@@ -75,7 +78,6 @@ body {
 }
 
 #loginCard {
-  /* background: url("./image/cardArtBackground.jpg") no-repeat center center; */
   background-color: transparent;
   border-color: transparent;
   width: 100%;
