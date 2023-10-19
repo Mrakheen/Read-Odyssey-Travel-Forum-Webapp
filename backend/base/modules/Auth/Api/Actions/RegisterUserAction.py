@@ -7,7 +7,7 @@ from base.mail.AuthMail import userRegistered
 
 def sendNotification(user):
     title = 'Welcome to Redyssey!'
-    text = 'Congratulations on creating your account, ' + user.username + '! You can now access user only features such as creating posts, joining Subribbits, and more. Enjoy.'
+    text = 'Congratulations on creating your account, ' + user.username + '! You can now access user only features such as creating posts, joining subredyssey, and more. Enjoy.'
     NotifyUser.send(user, title, text)
 
 def register(request):
