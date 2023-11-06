@@ -52,11 +52,11 @@ function LikeCommentButton({ comment }) {
                             {
                                 likedOn ?
                                     (
-                                        <small><i class="fas fa-thumbs-up" type="submit" onClick={submitHandler}></i> {numLikes}</small>
+                                        <medium><i class="fas fa-thumbs-up" type="submit" onClick={submitHandler}></i> {numLikes}</medium>
                                     )
                                     :
                                     (
-                                        <small><i class="far fa-thumbs-up" type="submit" onClick={submitHandler}></i> {numLikes}</small>
+                                        <medium><i class="far fa-thumbs-up" type="submit" onClick={submitHandler}></i> {numLikes}</medium>
                                     )
 
                             }
@@ -64,7 +64,7 @@ function LikeCommentButton({ comment }) {
                     )
                     :
                     (
-                        <small><i class="far fa-thumbs-up"></i> {comment.numLikes}</small>
+                        <medium><i class="far fa-thumbs-up"></i> {comment.numLikes}</medium>
                     )
             }
 

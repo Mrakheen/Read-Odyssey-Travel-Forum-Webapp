@@ -125,7 +125,7 @@ function Home() {
                         <Form.Control
                           required
                           type="search"
-                          placeholder={"Search a post title"}
+                          placeholder={"\u{1F50E} Search a post title"}
                           value={search}
                           onChange={(e) => setSearch(e.target.value)}
                         />
@@ -137,21 +137,13 @@ function Home() {
                         {userInfo ? (
                           <div class="row py-2">
                             <div class="col-md-12" style={{ padding: "0" }}>
-                              <Link to={"/createPost"}>
-                                <button
-                                  type="button"
-                                  class="btn btn-dark btn-sm btn-block"
-                                >
-                                  Create post
-                                </button>
-                              </Link>
+                              
                             </div>
                           </div>
                         ) : (
-                          <div class="row py-3" id="loginRequireBar">
-                            <div class="col-md-8 p-2" align="left">
-                              &nbsp;&nbsp;&nbsp;&nbsp;Login or sign up before
-                              posting
+                          <div class="row py-3" id="loginRequireBar" style={{ backgroundColor: 'rgba(255, 0, 0, 0.3)' }}>
+                            <div class="col-md-8 p-2" align="left" style={{ color: 'white' }}>
+                              &nbsp;&nbsp;&nbsp;&nbsp;<strong>Login or sign up to start posting!</strong>
                             </div>
                             <div class="col-md-2 p-1" align="right">
                               <Link to="/login">
@@ -239,12 +231,12 @@ function Home() {
                             <small
                               style={{ color: "white", marginBottom: "2px" }}
                             >
-                              Showing search result for: <i>{search}</i>
+                              <strong style={{ color: "black" }}>Showing search result for: <i>{search}</i></strong>
                               <button
                                 id="clearSearchButton"
                                 onClick={() => setSearch("")}
                               >
-                                &nbsp;&nbsp;<b>Clear</b>
+                                &nbsp;&nbsp;<strong style={{ color: "black" }}><u><b>Clear</b></u></strong>
                               </button>
                             </small>
                           </div>

@@ -23,13 +23,15 @@ function CreatePost() {
   );
 
   const dispatch = useDispatch();
-  const [title, setTitle] = useState({});
+  const [title, setTitle] = useState("");
   const [subribbitName, setSubribbitName] = useState("");
-  const [content, setContent] = useState({});
+  const [content, setContent] = useState("");
   const [nsfw, setNsfw] = useState("n");
+  const [image, setImage] = useState(null); // Add state for image
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
 
   function notifyError() {
     toast(error);
@@ -79,21 +81,39 @@ function CreatePost() {
     }
   }, [error, post]);
 
+  const [imageFile, setImageFile] = useState(null);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0]; // Get the first file from the input
+    setImageFile(file);
+  }; 
+
   const submitHandler = (e) => {
-    // prevent default is used to prevent the page from refreshing
     e.preventDefault();
-
-    if (subribbitParameter === null) {
-      setSubribbitName("home");
-    }
-
-    // calling the action
-    dispatch(createPostAction(title, content, nsfw, subribbitName));
+  
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("nsfw", nsfw);
+    formData.append("image", imageFile); // Check the variable name "imageFile"
+    // Add the image to the formData
+    formData.append("subribbit", subribbitName);
+  
+    // Double-check the POST Request Header
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.access}`,
+        "Content-Type": "multipart/form-data", // Ensure the correct Content-Type header
+      },
+    };
+  
+    dispatch(createPostAction(formData, config));
   };
-
+  
+ 
   return (
     <div>
-      <div class="container-fluid px-0">
+      <div className="container-fluid px-0">
         <UserNavbar />
         <img
           style={{
@@ -105,20 +125,19 @@ function CreatePost() {
           src={image1}
           alt=""
         ></img>
-        <div id="page-size">
-          {/* <div class="col-md-8 offset-md-2 pt-5"> */}
+         <div id="page-size">
           {userInfo ? (
-            <div class="row pt-3">
-              <div class="col-md-3" style={{ width: "29.16%" }}>
+            <div className="row pt-3">
+              <div className="col-md-3" style={{ width: "29.16%" }}>
                 {" "}
               </div>
-              <div class="col-md-5 py-3" id="createPostForm">
-                <h4 class="text-light py-3 px-3 font-weight-bold">
+              <div className="col-md-5 py-3" id="createPostForm">
+                <h4 className="text-light py-3 px-3 font-weight-bold">
                   Create Post
                 </h4>
                 <ToastContainer />
-                <Form onSubmit={submitHandler}>
-                  <div class="row">
+                <Form onSubmit={submitHandler} encType="multipart/form-data">
+                  <div className="row">
                     {loadingOwnedAndJoinedSubribbits ? (
                       <Loader />
                     ) : errorOwnedAndJoinedSubribbits ? (
@@ -150,26 +169,35 @@ function CreatePost() {
                   </div>
                   <div class="row">
                     <div>
-                      <div class="card p-3" id="writePost">
-                        <Form.Group className="mb-3" controlId="title">
-                          <Form.Control
-                            required
-                            type="title"
-                            placeholder="Title"
-                            onChange={(e) => setTitle(e.target.value)}
-                          />
-                        </Form.Group>
+                    <div className="card p-3" id="writePost">
+                      <Form.Group className="mb-3" controlId="title" method="post" enctype="multipart/form-data">
+                        <Form.Control
+                          required
+                          type="text"
+                          placeholder="Title"
+                          onChange={(e) => setTitle(e.target.value)}
+                        />
+                      </Form.Group>
 
-                        <Form.Group className="mb-2" controlId="content">
-                          <Form.Control
-                            as="textarea"
-                            rows={4}
-                            type="content"
-                            placeholder="Text (optional)"
-                            onChange={(e) => setContent(e.target.value)}
-                          />
-                        </Form.Group>
+                      <Form.Group className="mb-2" controlId="content" method="post" enctype="multipart/form-data">
+                        <Form.Control
+                          as="textarea"
+                          rows={4}
+                          type="text"
+                          placeholder="Text (optional)"
+                          onChange={(e) => setContent(e.target.value)}
+                        />
+                      </Form.Group>
 
+                      {/* Add image input field */}
+                      <Form.Group className="mb-3" controlId="image" method="post" enctype="multipart/form-data">
+                        <label htmlFor="image"  style={{ color: 'white' }}>Choose an image or video (optional)</label>
+                        <Form.Control
+                          type="file"
+                          accept="image/*,video/*"
+                          onChange={handleImageChange}
+                        />
+                      </Form.Group>
                         {/* <Form.Check
                           type="switch"
                           id="custom-switch"
@@ -215,7 +243,7 @@ function CreatePost() {
                   </div>
                 </Form>
               </div>
-              <div class="col-md-5 px-5 pt-2"></div>
+              <div className="col-md-5 px-5 pt-2"></div>
             </div>
           ) : (
             <div>
@@ -253,3 +281,6 @@ function CreatePost() {
 }
 
 export default CreatePost;
+
+
+

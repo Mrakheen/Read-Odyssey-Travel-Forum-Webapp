@@ -5,7 +5,7 @@ from base.traits import NotifyUser
 def sendNotification(likeCreator, commentOwner, comment, post):
     if likeCreator.id != commentOwner.id:
         title = 'Someone liked your comment'
-        text = 'u/' + likeCreator.username + ' liked your comment: ' + comment
+        text = '' + likeCreator.username + ' liked your comment: ' + comment
         link = '/post/' + str(post.id)
         NotifyUser.send(commentOwner, title, text, link)
 

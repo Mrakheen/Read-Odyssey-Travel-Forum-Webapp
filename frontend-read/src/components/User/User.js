@@ -104,21 +104,6 @@ function User() {
                   <div class="row">
                     <UserCard user={user} />
 
-                    {isOwner ? (
-                      <div class="row m-0 p-0 mb-2">
-                        <Link to="/createPost" class="p-0 m-0">
-                          <button
-                            type="button"
-                            class="btn btn-dark btn-sm btn-block"
-                          >
-                            Create post
-                          </button>
-                        </Link>
-                      </div>
-                    ) : (
-                      <div></div>
-                    )}
-
                     <div class="card" id="chooseFilter" align="left">
                       <div class="d-flex flex-row p-2">
                         <div>

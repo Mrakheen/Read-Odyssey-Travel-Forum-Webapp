@@ -106,7 +106,7 @@ export const listSubribbits = (search) => async (dispatch, getState) => {
             }
         }
 
-        var url = "http://localhost:8000/api/subribbit/all/";
+        var url = "http://localhost:8001/api/subribbit/all/";
         if (search != "" && search != null) {
             url = backendUrl + `api/subribbit/all/?search=${search}`;
         }

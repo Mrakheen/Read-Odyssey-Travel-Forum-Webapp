@@ -1,5 +1,5 @@
 //import React from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Navbar,
   Container,
@@ -21,6 +21,7 @@ import { logout } from "../../actions/userActions";
 import NotificationButton from "../Notification/NotificationButton";
 import CreatePostButtonNavbar from "../Posts/CreatePostButtonNavbar";
 import { GetUsername } from "../Utilities/GetUsername";
+import Home from "../Home/Home"
 
 function UserNavbar({ onSearch }) {
   // get userLogin from state
@@ -37,8 +38,32 @@ function UserNavbar({ onSearch }) {
   // const realUsername = GetUsername(userInfo.username);
   // console.log(realUsername);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  // Add a scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+ 
   return (
-    <nav class="navbar fixed-top navbar-expand-lg navbar-white bg-white custom-navbar">
+    <nav
+      className={`navbar fixed-top navbar-expand-lg custom-navbar ${
+        scrolled ? "scrolled" : ""
+      }`}
+    >
       <Container>
         <div class="pt-1">
           <Link to="/">
@@ -67,15 +92,15 @@ function UserNavbar({ onSearch }) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav" align="center">
           {/* Need to set this navbar as a separate ul first, and then give a me-auto. Check the next ul */}
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item active">
+           <ul class="navbar-nav me-auto">
+            {/*<li class="nav-item active">
               <Link to="/home">
                 <button type="button" className="btn btn-dark" id="buttonHome">
                   <img src={homeIcon} alt="Home" width="30" height="30" />
                   <span className="sr-only">(current)</span>
                 </button>
               </Link>
-            </li>
+            </li>*/}
 
             {/* <li class="nav-item active">
               <Link to="/subribbits">
@@ -84,7 +109,8 @@ function UserNavbar({ onSearch }) {
                   <span className="sr-only">(current)</span>
                 </button>
               </Link>
-            </li> */}
+            </li>*/} 
+
           </ul>
           <ul class="navbar-nav navbar-right">
             <CreatePostButtonNavbar />
@@ -107,7 +133,7 @@ function UserNavbar({ onSearch }) {
                           id="profileLogo"
                           alt=""
                         />
-                        &nbsp;&nbsp;&nbsp;&nbsp;{userInfo.username}
+                        &nbsp;&nbsp;&nbsp;&nbsp;<b style={{ color: 'black' }}><i>{userInfo.username}</i></b>
                       </>
                     }
                     class="pt-1"

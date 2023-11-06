@@ -6,6 +6,8 @@ from base.modules.PostVote.Api import PostVoteViews
 from base.modules.User.Api import UserViews
 from base.modules.Subribbit.Api import SubribbitViews
 from base.modules.Notification.Api import NotificationViews
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('auth/login/', AuthViews.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
@@ -46,3 +48,10 @@ urlpatterns = [
 
     path('notification/all/', NotificationViews.currentUserNotifications, name="get_current_user_notifications"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+    

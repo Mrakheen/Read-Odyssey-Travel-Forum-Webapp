@@ -4,28 +4,36 @@ from base.views.baseViews import error, response
 from better_profanity import profanity
 
 def checkPostId(id):
-    checkPostExist = Post.objects.filter(id = id)
+    return Post.objects.filter(id=id).exists()
 
-    if len(checkPostExist) > 0:
-        return True
-    else:
-        return False
-
-def update(request, pk):
-    data = request.data
-
-    data['title'] = profanity.censor(data['title'])
-    data['content'] = profanity.censor(data['content'])
+def update(request, pk, image=None):
+    # If 'image' is not provided in the request, 'image' will be None by default.
 
     if not checkPostId(pk):
         return error('Post ID not found')
 
     post = Post.objects.get(id=pk)
 
-    post.title = data['title']
-    post.content = data['content']
-    post.nsfw = data['nsfw']
+    # Update post attributes based on the data from the request.
+    post.title = profanity.censor(request.data['title'])
+    post.content = profanity.censor(request.data['content'])
+    post.nsfw = request.data['nsfw']
 
+    if image:
+        # Handle the image update
+        new_image = request.FILES.get('image')
+
+        if post.image:
+            # If the post already has an image, delete it before updating.
+            post.image.delete()
+
+        post.image = new_image
+
+    # Save the updated post to the database.
     post.save()
 
-    return response('Post updated')
+     # Serialize the updated post using PostSerializer.
+    serialized_post = PostSerializer(post).data
+
+    # Return the serialized post in the response.
+    return response('Post updated', data=serialized_post)

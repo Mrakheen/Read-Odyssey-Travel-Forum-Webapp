@@ -46,6 +46,7 @@ function PostDetailsDropDown({ post, sub }) {
                             <ConfirmDeletePostModal
                                 sub={sub}
                                 show={modalShow}
+                                redirectTo="/home" 
                                 post={post}
                                 onHide={() => setModalShow(false)}
                             />

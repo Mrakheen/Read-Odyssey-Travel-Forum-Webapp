@@ -166,40 +166,16 @@ export const listUserPostsAction =
     }
   };
 
-export const createPostAction =
-  (title, content, nsfw, subribbitName) => async (dispatch, getState) => {
+  export const createPostAction = (formData, config) => async (dispatch) => {
     try {
       dispatch({
         type: CREATE_POST_REQUEST,
       });
-
-      const {
-        userLogin: { userInfo },
-      } = getState();
-
-      // we're passing header into our post request
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${userInfo.access}`,
-        },
-      };
-      // console.log(subribbit)
-      // this is the regular axios call, but we're now passing in username, password and the config above
-      const { data } = await axios.post(
-        backendUrl + "api/post/create/",
-        {
-          title: title,
-          content: content,
-          nsfw: nsfw,
-          subribbit: subribbitName,
-        },
-        config
-      );
-
+  
+      const { data } = await axios.post(backendUrl + "api/post/create/", formData, config);
+  
       window.location.href = "post/" + data.data.id;
-
-      // the regular success dispatch, with payload data from the axios call above
+  
       dispatch({
         type: CREATE_POST_SUCCESS,
         payload: data.message,
@@ -215,38 +191,91 @@ export const createPostAction =
     }
   };
 
-export const deletePostAction = (postId) => async (dispatch, getState) => {
+  export const deletePostAction = (postId) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: DELETE_POST_REQUEST
+      })
+  
+      const {
+        userLogin: { userInfo },
+      } = getState()
+  
+      // we're passing header into our post request
+      const config = {
+        headers: {
+          'Content-type': 'application/json',
+          Authorization: `Bearer ${userInfo.access}`
+        }
+      }
+  
+      // this is the regular axios call, but we're now passing in username, password and the config above
+      const { data } = await axios.delete(
+        backendUrl + `api/post/delete/${postId}/`,
+        config
+      )
+  
+      // the regular success dispatch, with payload data from the axios call above
+      dispatch({
+        type: DELETE_POST_SUCCESS,
+        payload: data.message
+      })
+  
+  
+    } catch (error) {
+      dispatch({
+        type: DELETE_POST_FAIL,
+        payload: error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+      })
+    }
+  };
+  
+  
+export const updatePostAction = (postId, title, content, nsfw, image) => async (
+  dispatch,
+  getState
+) => {
   try {
     dispatch({
-      type: DELETE_POST_REQUEST,
+      type: UPDATE_POST_REQUEST,
     });
 
     const {
       userLogin: { userInfo },
     } = getState();
 
-    // we're passing header into our post request
+    // Create a FormData object to send the data
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("nsfw", nsfw);
+    formData.append("image", image); // Append the image file
+    formData.append("postId", postId);
+
+    // Create a configuration object with the appropriate headers
     const config = {
       headers: {
-        "Content-type": "application/json",
         Authorization: `Bearer ${userInfo.access}`,
+        // No need to set "Content-Type" as FormData handles it
       },
     };
 
-    // this is the regular axios call, but we're now passing in username, password and the config above
-    const { data } = await axios.delete(
-      backendUrl + `api/post/delete/${postId}/`,
+    // Make a POST request with the FormData
+    const { data } = await axios.put(
+      backendUrl + `api/post/update/${postId}/`,
+      formData,
       config
     );
 
-    // the regular success dispatch, with payload data from the axios call above
     dispatch({
-      type: DELETE_POST_SUCCESS,
+      type: UPDATE_POST_SUCCESS,
       payload: data.message,
     });
   } catch (error) {
     dispatch({
-      type: DELETE_POST_FAIL,
+      type: UPDATE_POST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -255,44 +284,3 @@ export const deletePostAction = (postId) => async (dispatch, getState) => {
   }
 };
 
-export const updatePostAction =
-  (postId, title, content, nsfw) => async (dispatch, getState) => {
-    try {
-      dispatch({
-        type: UPDATE_POST_REQUEST,
-      });
-
-      const {
-        userLogin: { userInfo },
-      } = getState();
-
-      // we're passing header into our post request
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${userInfo.access}`,
-        },
-      };
-
-      // this is the regular axios call, but we're now passing in username, password and the config above
-      const { data } = await axios.put(
-        backendUrl + `api/post/update/${postId}/`,
-        { title: title, content: content, nsfw: nsfw },
-        config
-      );
-
-      // the regular success dispatch, with payload data from the axios call above
-      dispatch({
-        type: UPDATE_POST_SUCCESS,
-        payload: data.message,
-      });
-    } catch (error) {
-      dispatch({
-        type: UPDATE_POST_FAIL,
-        payload:
-          error.response && error.response.data.message
-            ? error.response.data.message
-            : error.message,
-      });
-    }
-  };

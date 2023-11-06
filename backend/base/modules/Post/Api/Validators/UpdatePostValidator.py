@@ -3,10 +3,16 @@ from base.views.baseViews import validationError
 def validate(request):
     data = request.data
 
-    if data.get('title') == None or str(data['title']).isspace() == True or str(data['title']) == "" or data.get('content') == None or data.get('nsfw') == None:
-        return validationError('Please fill in required fields')
+    # Check if 'title' and 'content' fields are empty or contain only whitespace
+    if not data.get('title') or not data['title'].strip():
+        return validationError('Title is required')
 
-    if data.get('nsfw') != 'y' and data.get('nsfw') != 'n':
+    if not data.get('content') or not data['content'].strip():
+        return validationError('Content is required')
+
+    # Check if 'nsfw' is provided and is either 'y' or 'n'
+    nsfw = data.get('nsfw')
+    if nsfw is not None and nsfw not in ['y', 'n']:
         return validationError('Please enter y/n for nsfw')
-
+                                                    
     return None

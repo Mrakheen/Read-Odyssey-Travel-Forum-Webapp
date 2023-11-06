@@ -6,7 +6,7 @@ from better_profanity import profanity
 def sendNotification(commentCreator, postOwner, message, post):
     if commentCreator.id != postOwner.id:
         title = 'Someone commented on your post'
-        text = 'u/' + commentCreator.username + ' commented on your post. Message: ' + message
+        text = '' + commentCreator.username + ' commented on your post. Message: ' + message
         link = '/post/' + str(post.id)
         NotifyUser.send(postOwner, title, text, link)
 

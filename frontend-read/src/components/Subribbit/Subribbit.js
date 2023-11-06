@@ -39,7 +39,7 @@ function Subribbit() {
 
   const [search, setSearch] = useState("");
 
-  const searchPlaceholder = "Search a title about " + match.sub;
+  const searchPlaceholder = "\u{1F50E} Search a post title on " + match.sub;
 
   const postList = useSelector((state) => state.postList);
   const { error, loading, posts } = postList;
@@ -228,7 +228,7 @@ function Subribbit() {
                                     disabled
                                     class="btn btn-dark btn-sm btn-block"
                                   >
-                                    Join to create post on r/{match.sub}
+                                    Join to create post on <strong>{match.sub}</strong>
                                   </button>
                                 </div>
                               </div>

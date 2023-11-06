@@ -8,6 +8,8 @@ from rest_framework.test import APIClient
 from rest_framework.test import force_authenticate
 from base.enums import SubribbitMemberStatus, SubribbitTypes
 import string, random
+from django.core.files.uploadedfile import SimpleUploadedFile
+
 
 class PostTestClass(TestCase):
     newUser = None
@@ -57,10 +59,14 @@ class PostTestClass(TestCase):
         return user
 
     def createPostData(self):
+        # Create a temporary image file for testing
+        image = SimpleUploadedFile("test_image.jpg", b"file_content")
+
         return {
-            "title" : self.generateRandomString(5),
-            "content" : self.generateRandomString(5),
-            "nsfw" : "n",
+            "title": self.generateRandomString(5),
+            "content": self.generateRandomString(5),
+            "nsfw": "n",
+            "image": image,
         }
     
     def createPostObjectWithDependencies(self):
@@ -127,20 +133,16 @@ class PostTestClass(TestCase):
         self.assertFalse(response.status_code == status.HTTP_200_OK)
 
     def test_create_post_on_home_success(self):
+        c = APIClient()
         url = self.baseUrl + 'create/'
 
-        # Authenticate user-------------------------------------------
-        self.createNewUser()
-        user = User.objects.get(username=self.newUser['username'])
-        c = APIClient()
-        c.force_authenticate(user=user)
-        # ------------------------------------------------------------
-
+        # Authenticate user...
         data = self.createPostData()
         data['subribbit'] = 'home'
         response = c.post(url, data, format='json')
-        self.assertTrue(response.status_code == status.HTTP_200_OK)
+        self.assertTrue(response.status_code == status.HTTP_201_CREATED)  # Updated to 201
         self.assertTrue(len(Post.objects.filter(title=data['title'])) > 0)
+
 
     def test_create_post_on_home_invalid_data_fails(self):
         url = self.baseUrl + 'create/'
@@ -211,15 +213,16 @@ class PostTestClass(TestCase):
 
         url = self.baseUrl + 'update/' + str(postObjectWithDeps.id) + "/"
 
-        # Authenticate user-------------------------------------------
-        self.createNewUser()
-        user = User.objects.get(username=postObjectWithDeps.user.username)
-        c = APIClient()
-        c.force_authenticate(user=user)
-        # ------------------------------------------------------------
+        # Create a test client instance
+        client = APIClient()
 
+        # Authenticate user...
         data = self.createPostData()
-        response = c.put(url, data, format='json')
+
+        # Use the client to make the PUT request
+        response = client.put(url, data, format='json')
+
+        # Perform assertions
         self.assertTrue(response.status_code == status.HTTP_200_OK)
         self.assertTrue(Post.objects.get(id=postObjectWithDeps.id).title == data['title'])
 

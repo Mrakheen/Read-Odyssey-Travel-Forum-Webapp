@@ -7,10 +7,10 @@ from base.traits import NotifyUser
 def sendNotification(subribbitOwner, subribbitRequestMember, subribbit):
     if subribbit.type == SubribbitTypes.get.PRIVATE.value:
         title = 'New membership request'
-        text = 'u/' + subribbitRequestMember.username + ' has requested to join your private Subribbit r/' + subribbit.name
+        text = '' + subribbitRequestMember.username + ' has requested to join your private Subribbit r/' + subribbit.name
     else:
         title = 'Someone joined your Subribbit'
-        text = 'u/' + subribbitRequestMember.username + ' has joined your public Subribbit r/' + subribbit.name
+        text = '' + subribbitRequestMember.username + ' has joined your public Subribbit r/' + subribbit.name
     link = '/community/' + str(subribbit.name)
     NotifyUser.send(subribbitOwner, title, text, link)
 

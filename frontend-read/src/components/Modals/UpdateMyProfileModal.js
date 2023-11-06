@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Modal, Spinner } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux";
 import { Card, Form, Row, Col, Button, FloatingLabel } from "react-bootstrap";
-import { deletePostAction, updatePostAction } from "../../actions/postActions";
 import Loader from "../Utilities/Loader";
 import { useNavigate } from "react-router-dom"
 import { UPDATE_USER_PROFILE_RESET } from "../../actions/types";

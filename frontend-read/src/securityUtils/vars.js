@@ -1,3 +1,3 @@
 import axios from "axios";
 
-export let backendUrl = 'http://localhost:8000/';
+export let backendUrl = 'http://localhost:8001/';

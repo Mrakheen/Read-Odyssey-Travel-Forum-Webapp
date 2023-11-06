@@ -10,37 +10,31 @@ def validateSort(sortField):
     return True
 
 def sort(request, user):
-    # How to sort: ?sort=rating
+    sortField = request.GET.get('sort', '')
 
-    sortField = ''
-    if request.GET.get('sort') != None:
-        sortField = request.GET.get('sort', '')
+    if sortField and not validateSort(sortField):
+        return 'Targeted sort field not found'
 
-        if not validateSort(sortField):
-            return 'Targeted sort field not found'
-
-    if sortField != '':
-        return Post.objects.filter(user = user).order_by('-' + sortField, '-createdAt')
+    queryset = Post.objects.filter(user=user)
+    
+    if sortField:
+        queryset = queryset.order_by('-' + sortField, '-createdAt')
     else:
-        return Post.objects.filter(user = user).order_by('-createdAt')
+        queryset = queryset.order_by('-createdAt')
+
+    return queryset
 
 def checkUsername(username):
-    checkUserExist = User.objects.filter(username = username)
-
-    if len(checkUserExist) > 0:
-        return True
-    else:
-        return False
+    return User.objects.filter(username=username).exists()
 
 def get(request, username):
     if not checkUsername(username):
         return error('Username not found')
 
-    findUser = User.objects.filter(username=username)
-    user = User.objects.get(id = findUser[0].id)
-
+    user = User.objects.get(username=username)
     posts = sort(request, user)
-    if type(posts) == str:
+
+    if isinstance(posts, str):
         return error(posts)
 
     serialized = PostSerializer(posts, many=True).data

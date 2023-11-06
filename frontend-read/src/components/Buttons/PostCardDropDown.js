@@ -40,6 +40,7 @@ function PostCardDropDown({ post, sub }) {
                                 sub={sub}
                                 show={modalShow}
                                 post={post}
+                                redirectTo={`/community/${post.subRibbit}`}
                                 onHide={() => setModalShow(false)}
                             />
                         </div>

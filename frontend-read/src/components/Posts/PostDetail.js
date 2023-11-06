@@ -4,7 +4,7 @@ import { listPostDetails } from "../../actions/postActions";
 import Loader from "../Utilities/Loader";
 import Message from "../Utilities/Message";
 import UserNavbar from "../Navbar/UserNavbar";
-import { Card, Form, Row, Col, Button, FloatingLabe } from "react-bootstrap";
+import { Card, Form, Row, Col, Button, FloatingLabe, Image } from "react-bootstrap";
 import {
   Link,
   Navigate,
@@ -30,26 +30,66 @@ import GeneralGetErrorPage from "../Utilities/GeneralGetErrorPage";
 import image1 from "../../image/1.png";
 import { GetUsername } from "../Utilities/GetUsername";
 
+
 function PostDetail() {
+
+  function renderImage(image) {
+    if (image && image !== "/media/null") {
+      // Check if the image is a video (you can update this check as needed)
+      const isVideo = image.endsWith('.mp4'); // You may need a more robust check
+  
+      if (isVideo) {
+        return (
+          <video
+            controls
+            className="post-video"
+            style={{
+              width: "100%",
+              maxHeight: "100%",
+              display: "block",
+              margin: "0 auto"
+            }}
+          >
+            <source src={`http://127.0.0.1:8001${image}`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        );
+      } else {
+        // Render an image
+        return (
+          <Image
+            src={`http://127.0.0.1:8001${image}`}
+            className="post-image"
+            style={{
+              width: "100%",
+              maxHeight: "100%",
+              display: "block",
+              margin: "0 auto"
+            }}
+          />
+        );
+      }
+    } else {
+      return null;
+    }
+  }
+  
+
   const [editPostOn, setEditPostOn] = useState(false);
 
   const dispatch = useDispatch();
 
-  // the reason we're using the code below useParams() is because the newer version of react doesn't work with match.params
   const match = useParams();
-
   const sub = " ";
 
   const postDetails = useSelector((state) => state.postDetails);
   const { loading, error, post } = postDetails;
-  // const realPostUsername = GetUsername(post.userName);
 
-  // get userLogin from state
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-  // const realUsername = GetUsername(userInfo.username);
 
   const [text, setText] = useState("");
+
 
   const createComment = useSelector((state) => state.createComment);
   const { loadingCreateComment, errorCreateComment, messageCreateComment } =
@@ -83,16 +123,16 @@ function PostDetail() {
     ? `${userInfo.username}, share your opinion here`
     : null;
 
-  useEffect(() => {
-    dispatch(listPostDetails(match.id));
-  }, [
-    messageUpdatePost,
-    messageVotePost,
-    messageCreateComment,
-    votePost,
-    match.id,
-  ]);
+  const [messageDeletePost, setMessageDeletePost] = useState(null);
 
+
+  useEffect(() => {
+    if (post) {
+      dispatch(listPostDetails(match.id));
+    }
+  }, [messageUpdatePost, messageVotePost, messageCreateComment, votePost, match.id, post]);
+    
+  
   useEffect(() => {
     if (messageCreateComment) {
       setText("");
@@ -164,107 +204,109 @@ function PostDetail() {
 
   return (
     <div class="container-fluid px-0">
-      <UserNavbar />
-      <img
-        style={{
-          width: "100vw",
-          height: "100vh",
-          position: "fixed",
-          objectFit: "cover",
-        }}
-        src={image1}
-        alt=""
-      ></img>
-      <div id="page-size">
-        <ToastContainer />
-        {error || errorAllComments ? (
-          <GeneralGetErrorPage />
-        ) : (
-          <div class="row">
-            <div class="col-md-3" style={{ width: "29.16%" }}>
-              {" "}
-            </div>
-            <div class="col-md-5 p-0">
-              <div class="">
-                <div class="card p-3" id="postDetailCard">
-                  {loading ? (
-                    <Loader />
-                  ) : error ? (
-                    <Message color="danger">{error}</Message>
-                  ) : (
-                    <div class="row">
-                      <div id="postHeader">
-                        <div class="row">
-                          <div class="col-md-11">
-                            <small>
-                              <strong>
-                                <Link
-                                  to={checkSubLink()}
-                                  id="postDetailSubRibbit"
-                                >
-                                  {post.subRibbit}
-                                </Link>
-                              </strong>
-                            </small>
-                            &nbsp;&nbsp;
-                            <small>
-                              ~ Posted by&nbsp;
+    <UserNavbar />
+    <img
+      style={{
+        width: "100vw",
+        height: "100vh",
+        position: "fixed",
+        objectFit: "cover",
+      }}
+      src={image1}
+      alt=""
+    ></img>
+    <div id="page-size">
+      <ToastContainer />
+      {error || errorAllComments ? (
+        <GeneralGetErrorPage />
+      ) : (
+        <div class="row">
+          <div class="col-md-3" style={{ width: "29.16%" }}>
+            {" "}
+          </div>
+          <div class="col-md-5 p-0">
+            <div class="">
+              <div class="card p-3" id="postDetailCard">
+                {loading ? (
+                  <Loader />
+                ) : error ? (
+                  <Message color="danger">{error}</Message>
+                ) : (
+                  <div class="row">
+                    <div id="postHeader">
+                      <div class="row">
+                        <div class="col-md-11">
+                          <small>
+                            <strong>
                               <Link
-                                to={`/user/${post.userName}`}
-                                id="postDetailUsername"
+                                to={checkSubLink()}
+                                id="postDetailSubRibbit"
                               >
-                                {post.userName}
+                                {post.subRibbit}
                               </Link>
-                              &nbsp;
-                              {post.humanTimeDiffCreatedAt} ago
-                            </small>
-                          </div>
-                          <div class="col-md-1">
-                            <PostDetailsDropDown post={post} sub=" " />
-                          </div>
+                            </strong>
+                          </small>
+                          &nbsp;&nbsp;
+                          <small>
+                            ~ Posted by&nbsp;
+                            <Link
+                              to={`/user/${post.userName}`}
+                              id="postDetailUsername"
+                            >
+                              {post.userName}
+                            </Link>
+                            &nbsp;
+                            {post.humanTimeDiffCreatedAt} ago
+                          </small>
+                        </div>
+                        <div class="col-md-1">
+                          <PostDetailsDropDown post={post} sub=" " />
                         </div>
                       </div>
-
-                      <Card.Body>
-                        <div class="row">
-                          <div class="col-md-1">
-                            <center>
-                              <VotePostButton post={post} />
-                            </center>
-                          </div>
-
-                          <div class="col-md-11">
-                            <Card.Title as="h3">
-                              <strong>{post.title}</strong>
-                            </Card.Title>
-
-                            <Card.Text>
-                              {checkIsNsfwShouldHide() ? (
-                                <span class="badge badge-secondary">
-                                  Login to see NSFW post
-                                </span>
-                              ) : (
-                                <div>
-                                  {post.content !== "{}" ? (
-                                    <div>{post.content}</div>
-                                  ) : null}
-                                </div>
-                              )}
-                            </Card.Text>
-                          </div>
-                        </div>
-                      </Card.Body>
                     </div>
-                  )}
+
+                    <Card.Body>
+                      <div class="row">
+                        <div class="col-md-1">
+                          <center>
+                            <VotePostButton post={post} />
+                          </center>
+                        </div>
+
+                        <div class="col-md-11">
+                          <Card.Title as="h3">
+                            <strong>{post.title}</strong>
+                          </Card.Title>
+
+                          <Card.Text>
+                            {checkIsNsfwShouldHide() ? (
+                              <span className="badge badge-secondary">
+                                Login to see NSFW post
+                              </span>
+                            ) : (
+                              <div>
+                                {post.content !== "{}" ? (
+                                  <div>{post.content}</div>
+                                ) : null}
+                                 {renderImage(post.image)}
+                              </div>
+                            )}
+                          </Card.Text>
+
+                        </div>
+                      </div>
+                    </Card.Body>
+                  </div>
+                )}
 
                   <div class="row mt-2" align="center" id="postStats">
                     <div class="col-md-4">
                       <i class="far fa-comment-alt"></i>&nbsp;&nbsp;
-                      {post.numComments} comments
+                      <strong style={{ fontSize: '13px' }}>{post.numComments} comments</strong>
                     </div>
                     <div class="col-md-4">
                       <i class="far fa-clipboard"></i>&nbsp;&nbsp;
-                      {post.votesReceived} vote(s)
+                      <strong style={{ fontSize: '13px' }}>{post.votesReceived} vote(s)</strong>
                     </div>
                   </div>
                 </div>

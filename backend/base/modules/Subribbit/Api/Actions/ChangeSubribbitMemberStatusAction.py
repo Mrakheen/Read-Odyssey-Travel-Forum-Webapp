@@ -6,7 +6,7 @@ from base.enums import SubribbitMemberStatus
 
 def sendNotification(subribbitOwner, subribbitMember, subribbit, status):
     title = 'Membership status update'
-    text = 'u/' + subribbitOwner.username + ' has updated your membership status on r/' + subribbit.name + '. Status: ' + status
+    text = '' + subribbitOwner.username + ' has updated your membership status on r/' + subribbit.name + '. Status: ' + status
     link = '/community/' + str(subribbit.name)
     NotifyUser.send(subribbitMember, title, text, link)
 

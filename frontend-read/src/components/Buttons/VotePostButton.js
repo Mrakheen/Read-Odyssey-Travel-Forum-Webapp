@@ -75,6 +75,7 @@ function VotePostButton({ post }) {
             <div class="row pt-2">
               <i
                 class="fas fa-arrow-alt-circle-up"
+                style={{ fontSize: '24px' }}
                 type="submit"
                 onClick={upVote}
               ></i>
@@ -83,6 +84,7 @@ function VotePostButton({ post }) {
             <div class="row pt-2">
               <i
                 class="far fa-arrow-alt-circle-up"
+                style={{ fontSize: '24px' }}
                 type="submit"
                 onClick={upVote}
               ></i>
@@ -98,6 +100,7 @@ function VotePostButton({ post }) {
             <div class="row pt-2">
               <i
                 class="fas fa-arrow-alt-circle-down"
+                style={{ fontSize: '24px' }}
                 type="submit"
                 onClick={downVote}
               ></i>
@@ -106,6 +109,7 @@ function VotePostButton({ post }) {
             <div class="row pt-2">
               <i
                 class="far fa-arrow-alt-circle-down"
+                style={{ fontSize: '24px' }}
                 type="submit"
                 onClick={downVote}
               ></i>

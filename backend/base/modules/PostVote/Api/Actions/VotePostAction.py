@@ -5,7 +5,7 @@ from base.traits import NotifyUser
 def sendNotification(voteCreator, postOwner, post):
     if voteCreator.id != postOwner.id:
         title = 'New vote on post'
-        text = 'u/' + voteCreator.username + ' has just upvoted on one of your posts'
+        text = '' + voteCreator.username + ' has just upvoted on one of your posts'
         link = '/post/' + str(post.id)
         NotifyUser.send(postOwner, title, text, link)
 

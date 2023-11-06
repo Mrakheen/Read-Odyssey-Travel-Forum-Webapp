@@ -13,7 +13,8 @@ def sendNotification(user):
 def register(request):
     data = request.data
 
-    gravatarURL = data['imageURL'] if data['imageURL'] else CreateGravatar.create(str(data['email']))
+    gravatarURL = data.get('imageURL', CreateGravatar.create(str(data['email'])))
+
 
     user = User.objects.create(
         username=data['username'],

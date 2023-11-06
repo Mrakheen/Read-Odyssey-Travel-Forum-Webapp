@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Modal, Spinner } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux";
-import { deletePostAction } from "../../actions/postActions";
 import Loader from "../Utilities/Loader";
 import { useNavigate } from "react-router-dom"
 import { DELETE_POST_RESET, DELETE_POST_DONE } from "../../actions/types";

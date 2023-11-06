@@ -63,7 +63,7 @@ function SubribbitList() {
                   <Form.Control
                     required
                     type="search"
-                    placeholder="Search subredyssey"
+                    placeholder={"\u{1F50E} Search subredyssey"}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                   />

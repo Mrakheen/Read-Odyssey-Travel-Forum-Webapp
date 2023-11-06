@@ -10,12 +10,18 @@ body {
   overflow-x: hidden
 }
 
+/* Initial styles for the transparent navbar */
 .custom-navbar {
-  background-color: #ffffffc6 !important;
+  background-color: rgba(255, 255, 255, 0.488) !important;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   height: 60px;
-  border-bottom: 1px solid #1e121245;
+  transition: background-color 0.5s; /* Smooth transition effect */
+}
+
+/* Styles for the navbar when not scrolled */
+.custom-navbar.scrolled {
+  background-color: transparent !important;
 }
 
 .footer {
@@ -199,7 +205,7 @@ body {
 }
 
 #buttonHome {
-  background-color: #dfd4d4ad;
+  background-color: #9e9d9de5;
   border: none;
   height: 100%;
   transition: background-color 0.3s ease; 
@@ -211,20 +217,9 @@ body {
   border-radius: 0px;
 }
 
-#buttonCommunities {
-  background-color: #ffffff;
-  color: #000;
-  border: none;
-  height: 100%;
-  transition: background-color 0.3s ease;
-  margin-left: 10px; 
-}
-#buttonCommunities:hover {
-  background-color: #ff2a0098;
-}
 
 .Profile-Bttn{
-  background-color: #ffffff !important; 
+  background-color: rgba(255, 255, 255, 0.3) !important; 
   color: #fff; 
   border: none !important;
   height: 85%;
@@ -237,7 +232,7 @@ body {
 }
 
 #createPostNavBarBttn{
-  background-color: #dfd4d4ad;
+  background-color: rgba(171, 168, 168, 0.678);
   color: #950000;
 }
 #createPostNavBarBttn:hover {
@@ -246,7 +241,7 @@ body {
 }
 
 #notiBttn{
-  background-color: #dfd4d4ad;
+  background-color:rgba(171, 168, 168, 0.678);
   color: #950000;
 }
 #notiBttn:hover {
@@ -258,7 +253,7 @@ body {
   max-width: 35px;
   border: none;
   margin-left: 0px;
-  background-color: #ffffff;
+  background-color: none;
 }
 
 /* ---------------------------------------------------------------------Post */
@@ -271,16 +266,16 @@ body {
 
 #postCardMain {
   background-color: rgba(39, 39, 39, 0.603);;
-  border: 1px solid black;
+  border: 1.5px solid black;
   /* color: white; */
 }
 
 #postCardMain:hover {
-  border: 1px solid rgba(255, 255, 255, 0.422);
+  border: 4px solid rgba(51, 51, 51, 0.422);
 }
 
 #postCardBottomRight {
-  height: 80%;
+  height: 100%;
 }
 
 #postCardLink {
@@ -293,7 +288,8 @@ body {
 }
 
 #postCardSize:hover #postCardContent {
-  max-height: 100px;
+  /* You can retain the hover effect if needed */
+  max-height: none; /* Remove the max-height for hover state or set it to an appropriate value */
 }
 
 #postCardUsername {
@@ -332,7 +328,7 @@ body {
   white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 50px;
+  max-height: none; /* Remove the max-height constraint */
   max-width: 100%;
   transition: ease-in-out 150ms;
 }
@@ -413,9 +409,6 @@ body {
   font-size: 12px;
 }
 
-label {
-  
-}
 
 #createPostForm {
   background-color: rgba(39, 39, 39, 0.603);
@@ -1111,54 +1104,4 @@ a.footer__socials--link svg {
   }
 }
 
-#landingHomePageLargeText {
-  font-size: 55px;
-}
 
-#landingAboutPageContactIcons {
-  color: black;
-}
-
-#landingAboutPageContactIcons:hover {
-  color: darkslategrey;
-}
-
-#landingFunctionalitiesPageVideo {
-  width: 100%;
-  min-height: 300px;
-  position: -webkit-sticky;
-  /* Safari */
-  position: sticky;
-  top: 20px;
-}
-
-#landingFunctionalitiesListOfFunctions {
-  color: black;
-  width: 100%;
-  margin: 0 auto;
-  background-color: white;
-  float: none;
-  margin-bottom: 10px;
-  overflow-y: scroll;
-  height: 70vh;
-}
-
-#landingFunctionalitiesTimestampLink {
-  text-decoration: none;
-  color: blue;
-}
-
-#landingFunctionalitiesTimestampLink:hover {
-  text-decoration: underline;
-}
-
-#loginRequireBar {
-  background: rgba(39, 39, 39, 0.603);
-  border-radius: 5px;
-  border: solid 1px rgba(255, 255, 255, 0.422);
-  color: white;
-}
-
-#buttonDiv {
-  /* width: 600px; */
-}
