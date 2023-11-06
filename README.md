@@ -71,7 +71,6 @@ Quit the server with CONTROL-C.
 
 ```sh
 $ cd frontend
-$ npm cache clean --force
 $ npm install
 ```
 
