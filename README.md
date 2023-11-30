@@ -79,6 +79,7 @@ $ npm install
 2. Run the server
 
 ```sh
+$ npm install react-hook-form
 $ npm start
 
 =======================================================
