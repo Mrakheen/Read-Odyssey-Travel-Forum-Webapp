@@ -15,6 +15,7 @@ import Subribbit from './components/Subribbit/Subribbit';
 import User from './components/User/User'
 import SendResetPasswordEmail from './components/ResetPassword/SendResetPasswordEmail';
 import ResetPassword from './components/ResetPassword/ResetPassword';
+import ShowCommunityGuidelinesMessage from './components/CommunityGuidlines/ShowCommunityGuidelinesMessage';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/subribbits" element={<SubribbitList />} />
           <Route path="/sendResetPasswordEmail" element={<SendResetPasswordEmail />} />
           <Route path="/resetPassword/:token" element={<ResetPassword />} />
+          <Route path="/community-guidelines" element={<ShowCommunityGuidelinesMessage />} />
 
         </Routes>
       </Router>

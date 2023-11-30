@@ -22,6 +22,7 @@ import NotificationButton from "../Notification/NotificationButton";
 import CreatePostButtonNavbar from "../Posts/CreatePostButtonNavbar";
 import { GetUsername } from "../Utilities/GetUsername";
 import Home from "../Home/Home"
+import ShowCommunityGuidelinesMessage from "../CommunityGuidlines/ShowCommunityGuidelinesMessage";
 
 function UserNavbar({ onSearch }) {
   // get userLogin from state
@@ -144,6 +145,11 @@ function UserNavbar({ onSearch }) {
                     <NavDropdown.Item onClick={logoutHandler}>
                       Logout
                     </NavDropdown.Item>
+                    <LinkContainer to="/community-guidelines">
+            <NavDropdown.Item>
+              Community Guidelines
+            </NavDropdown.Item>
+          </LinkContainer>
                   </NavDropdown>
                 ) : (
                   <LinkContainer to="/login">
