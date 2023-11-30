@@ -32,7 +32,7 @@ import { GetUsername } from "../Utilities/GetUsername";
 
 
 function PostDetail() {
-
+  
   function renderImage(image) {
     if (image && image !== "/media/null") {
       // Check if the image is a video (you can update this check as needed)
@@ -89,7 +89,6 @@ function PostDetail() {
   const { userInfo } = userLogin;
 
   const [text, setText] = useState("");
-
 
   const createComment = useSelector((state) => state.createComment);
   const { loadingCreateComment, errorCreateComment, messageCreateComment } =
@@ -263,6 +262,21 @@ function PostDetail() {
                           <PostDetailsDropDown post={post} sub=" " />
                         </div>
                       </div>
+                    </div>
+
+                    <div className="pinpoint">
+                      <span
+                        role="img"
+                        aria-label="location pin"
+                        onClick={() => {
+                          if (post.locationTagLink) {
+                            window.open(post.locationTagLink, '_blank');
+                          }
+                        }}
+                        style={{ textDecoration: 'none', color: 'blue', cursor: 'pointer' }}
+                      > 📍  
+                        <u><i><strong>  {post.locationName}</strong></i></u>
+                      </span>
                     </div>
 
                     <Card.Body>

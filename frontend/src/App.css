@@ -12,7 +12,7 @@ body {
 
 /* Initial styles for the transparent navbar */
 .custom-navbar {
-  background-color: rgba(255, 255, 255, 0.488) !important;
+  background-color: rgba(255, 255, 255, 0.486) !important;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   height: 60px;
@@ -219,8 +219,7 @@ body {
 
 
 .Profile-Bttn{
-  background-color: rgba(255, 255, 255, 0.3) !important; 
-  color: #fff; 
+  background-color: rgba(255, 255, 255, 0.486) !important; 
   border: none !important;
   height: 85%;
   margin-left: none;
@@ -232,20 +231,20 @@ body {
 }
 
 #createPostNavBarBttn{
-  background-color: rgba(171, 168, 168, 0.678);
-  color: #950000;
+  background-color: rgba(171, 168, 168, 0.862);
+  color: #ce0101;
 }
 #createPostNavBarBttn:hover {
-  border-bottom: 3px solid #950000;
+  border-bottom: 3px solid #ce0101;
   border-radius: 0px;
 }
 
 #notiBttn{
-  background-color:rgba(171, 168, 168, 0.678);
-  color: #950000;
+  background-color:rgba(171, 168, 168, 0.862);
+  color: #ce0101;
 }
 #notiBttn:hover {
-  border-bottom: 3px solid #950000;
+  border-bottom: 3px solid #ce0101;
   border-radius: 0px;
 }
 

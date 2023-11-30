@@ -41,14 +41,6 @@ function CreatePost() {
     toast(post);
   }
 
-  function handleChangeNsfw(event) {
-    if (event.target.checked) {
-      setNsfw("y");
-    } else {
-      setNsfw("n");
-    }
-  }
-
   const ownedAndJoinedSubribbitList = useSelector(
     (state) => state.ownedAndJoinedSubribbitList
   );
@@ -88,6 +80,29 @@ function CreatePost() {
     setImageFile(file);
   }; 
 
+  const [enteredLocation, setEnteredLocation] = useState(""); // State to store manually entered location
+
+  const openGoogleMaps = () => {    
+    let googleMapsURL = `https://www.google.com/maps`;
+    // Open Google Maps in a new tab/window
+    window.open(googleMapsURL, '_blank');
+  };
+
+  const [locationName,setEnteredlocationName] = useState("");
+
+  const handleManualLocationChange = (e) => {
+    const enteredValue = e.target.value.trim(); // Remove leading/trailing spaces
+    setEnteredlocationName(enteredValue);
+    const formattedValue = enteredValue.split(' ').join('+'); // Replace spaces with '+'
+  
+    let locationURL = 'https://www.google.com/maps/place/';
+  
+    if (formattedValue !== '') {
+      locationURL += formattedValue;
+    }
+    setEnteredLocation(locationURL);
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
   
@@ -98,6 +113,8 @@ function CreatePost() {
     formData.append("image", imageFile); // Check the variable name "imageFile"
     // Add the image to the formData
     formData.append("subribbit", subribbitName);
+    formData.append("locationTagLink",enteredLocation);
+    formData.append("locationName",locationName);
   
     // Double-check the POST Request Header
     const config = {
@@ -109,8 +126,7 @@ function CreatePost() {
   
     dispatch(createPostAction(formData, config));
   };
-  
- 
+
   return (
     <div>
       <div className="container-fluid px-0">
@@ -174,9 +190,22 @@ function CreatePost() {
                         <Form.Control
                           required
                           type="text"
-                          placeholder="Title"
+                          placeholder="TITLE (required)"
                           onChange={(e) => setTitle(e.target.value)}
                         />
+                      </Form.Group>
+
+                      <Form.Group className="mb-3">
+                      <p style={{ color: 'white' }}><u>Location URL: {enteredLocation}</u></p>
+                        <Form.Control
+                          type="text"
+                          placeholder="Enter Name of location as in google maps"
+                          //value={enteredLocation}
+                          onChange={handleManualLocationChange}
+                        />
+                        
+                        {/* Button to select from Google Maps */}
+                        <Button onClick={openGoogleMaps}>Find From Google Maps</Button>
                       </Form.Group>
 
                       <Form.Group className="mb-2" controlId="content" method="post" enctype="multipart/form-data">
@@ -184,7 +213,7 @@ function CreatePost() {
                           as="textarea"
                           rows={4}
                           type="text"
-                          placeholder="Text (optional)"
+                          placeholder="text..... (optional)"
                           onChange={(e) => setContent(e.target.value)}
                         />
                       </Form.Group>

@@ -40,6 +40,8 @@ def create(request, image=None):  # Accept the 'image' argument with a default v
     title = profanity.censor(request.data.get('title', ''))
     content = profanity.censor(request.data.get('content', ''))
     nsfw = request.data.get('nsfw', '')
+    location_tag_link  = request.data.get('locationTagLink','')
+    locationname = request.data.get('locationName','')
 
     if request.data['subribbit'] != 'home':
         if not checkSubribbitExist(request.data['subribbit']):
@@ -50,19 +52,18 @@ def create(request, image=None):  # Accept the 'image' argument with a default v
         if not checkUserIsInSubribbit(user, subribbit):
             return error('You are not assigned to this subredyssey', status_code=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-    # Check for uploaded image
-    if image:  # Check if 'image' is provided
-        # You can add additional validation for image files here
-        # For example, check file size, file type, etc.
-
-        # Create the post with the image
+    if image:
+        # Logic for image handling remains unchanged
+        # Modify this section to include locationTagLink in the Post creation
         post = Post(
             user=user,
             title=title,
             content=content,
             nsfw=nsfw,
             subRibbit=request.data['subribbit'],
-            image=image  # Save the uploaded image
+            image=image,
+            locationTagLink=location_tag_link,
+            locationName = locationname
         )
     else:
         # Create the post without an image
@@ -71,7 +72,9 @@ def create(request, image=None):  # Accept the 'image' argument with a default v
             title=title,
             content=content,
             nsfw=nsfw,
-            subRibbit=request.data['subribbit']
+            subRibbit=request.data['subribbit'],
+            locationTagLink=location_tag_link,
+            locationName = locationname  
         )
 
     post.save()

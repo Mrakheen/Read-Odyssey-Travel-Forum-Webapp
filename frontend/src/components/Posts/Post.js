@@ -89,6 +89,20 @@ function Post({ post, sub }) {
                 </div>
               </div>
               <div className="row">
+                  <div className="pinpoint">
+                      <span
+                        role="img"
+                        aria-label="location pin"
+                        onClick={() => {
+                          if (post.locationTagLink) {
+                            window.open(post.locationTagLink, '_blank');
+                          }
+                        }}
+                        style={{ textDecoration: 'none', color: 'blue', cursor: 'pointer' }}
+                      > 📍  
+                        <u><i><strong>  {post.locationName}</strong></i></u>
+                      </span>
+                    </div>
                 <Card.Body>
                   <div className="row">
                     <Link to={`/post/${post.id}`} id="postCardBody">
@@ -147,3 +161,9 @@ function Post({ post, sub }) {
 }
 
 export default Post;
+
+
+
+
+
+

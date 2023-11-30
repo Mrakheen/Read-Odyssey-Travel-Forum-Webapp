@@ -16,6 +16,10 @@ class Post(models.Model):
     
     image = models.ImageField(upload_to = 'image_video/',blank=True,null=True, validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif', 'mp4', 'avi', 'mkv'])])
     subRibbit = models.CharField(max_length=20, null=True, blank=True)
+    locationTagLink = models.TextField(null=True, blank=True)
+    locationName = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return str(self.id)
+    
+    
