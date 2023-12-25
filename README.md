@@ -97,7 +97,7 @@ You can now view frontend in the browser.
 </details>
 
 <details>
- <summary><b>Running tests</b></summary>
+ <summary><b>Running tests & Built With</b></summary>
  <br />
 
 1. To run API tests, simply do the following
@@ -106,20 +106,6 @@ You can now view frontend in the browser.
 $ cd backend
 $ python manage.py test
 ```
-
-## :recycle: Continuous Testing <img src="https://github.com/juliantjg/Ribbit/actions/workflows/django.yml/badge.svg">
-
-I've set up Git Actions for this repository to run automated tests on pushes/PRs made on the `main`.
-
-<details>
- <summary><b>View build snapshot</b></summary>
- <br />
-  
-![image](https://user-images.githubusercontent.com/53683415/223595202-954dde63-ca1b-4f22-9e1a-442a52a9a78e.png#gh-dark-mode-only)
-
-![image](https://user-images.githubusercontent.com/53683415/223594907-d7bdbe54-7475-443e-a7f6-48d8f2d48576.png#gh-light-mode-only)
-
-</details>
   
 ## 🛠️ Built With <img src="https://user-images.githubusercontent.com/53683415/223294710-a2ba9d4c-c680-497a-9b71-101f2186fc49.png" width="30"> <img src="https://user-images.githubusercontent.com/53683415/223313723-71cdde37-3494-44e8-80cb-01edecb3311c.png" width="30"> <img src="https://user-images.githubusercontent.com/53683415/224955579-a1ed2e8c-3ab7-41e1-b129-f37466f77c05.png" width="30"> <img src="https://user-images.githubusercontent.com/53683415/223313774-2b46fc19-b811-483f-a53c-978070d5777e.png" width="30"> <img src="https://user-images.githubusercontent.com/53683415/223313813-78e199cc-9a22-4603-99d3-6b50e2bcec0f.png" width="30"> <img src="https://user-images.githubusercontent.com/53683415/223313847-3cf57f1a-11fd-4963-a1df-b3895e478119.png" width="30"> <img src="https://user-images.githubusercontent.com/53683415/224954200-33f50594-34e2-43b6-81e9-f3c0bb269f97.png" width="30">
 - <img src="https://user-images.githubusercontent.com/53683415/223294710-a2ba9d4c-c680-497a-9b71-101f2186fc49.png" width="12"> <b><a href="https://reactjs.org/">React</a> -</b> React is a free and open-source front-end JavaScript library for building user interfaces based on components.
