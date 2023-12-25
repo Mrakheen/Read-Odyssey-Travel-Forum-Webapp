@@ -1,6 +1,6 @@
 ## :airplane: Getting Started
 
-Setting up <b>Redyssey</b> on your local machine without Docker? Here are the instructions:
+Setting up <b>Read Odyssey</b> on your local machine? Here are the instructions:
 
 <details>
  <summary><b>Setting up the back-end</b></summary>
