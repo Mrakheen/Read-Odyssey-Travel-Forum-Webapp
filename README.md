@@ -113,7 +113,22 @@ $ python manage.py test
 - <img src="https://user-images.githubusercontent.com/53683415/223313813-78e199cc-9a22-4603-99d3-6b50e2bcec0f.png" width="12"> <b><a href="https://www.djangoproject.com/">Django</a> -</b> Django is a free and open-source, Python-based web framework that follows the model–template–views architectural pattern.
 - <img src="https://user-images.githubusercontent.com/53683415/223313847-3cf57f1a-11fd-4963-a1df-b3895e478119.png" width="12"> <b><a href="https://redux.js.org/">Redux</a> -</b> Redux is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces.
 
+</details>
 
-# Video Demo
+# Video Demos
+
 https://github.com/Mrakheen/Read-Odyssey-Travel-Forum-Webapp/assets/53326887/5b2dd11d-ec6f-41b0-8e9d-4c56ab7ff5bd
+
+
+https://github.com/Mrakheen/Read-Odyssey-Travel-Forum-Webapp/assets/53326887/d1de442f-f77d-493f-8586-d1af90aeeeb7
+
+
+https://github.com/Mrakheen/Read-Odyssey-Travel-Forum-Webapp/assets/53326887/5e7c9e3f-f1fe-4de9-b6e4-294cc5cc0d00
+
+
+https://github.com/Mrakheen/Read-Odyssey-Travel-Forum-Webapp/assets/53326887/ab86d3a9-76df-4838-b5f7-91a00da7b646
+
+
+https://github.com/Mrakheen/Read-Odyssey-Travel-Forum-Webapp/assets/53326887/da5e6b8c-abdf-4a6b-ac5a-80c593406d43
+
 
