@@ -12,7 +12,7 @@ body {
 
 /* Initial styles for the transparent navbar */
 .custom-navbar {
-  background-color: rgba(255, 255, 255, 0.486) !important;
+  background-color: none !important;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   height: 60px;
@@ -219,19 +219,17 @@ body {
 
 
 .Profile-Bttn{
-  background-color: rgba(255, 255, 255, 0.486) !important; 
+  background-color: rgb(255, 255, 255) !important;
   border: none !important;
   height: 85%;
   margin-left: none;
   margin-right:none;
-}
-.Profile-Bttn:hover {
-  border-bottom: 3px solid #950000;
-  border-radius: 0px;
+  
 }
 
+
 #createPostNavBarBttn{
-  background-color: rgba(171, 168, 168, 0.862);
+  background-color: rgb(255, 255, 255);
   color: #ce0101;
 }
 #createPostNavBarBttn:hover {
@@ -240,7 +238,7 @@ body {
 }
 
 #notiBttn{
-  background-color:rgba(171, 168, 168, 0.862);
+  background-color:rgb(255, 255, 255);
   color: #ce0101;
 }
 #notiBttn:hover {
@@ -1102,5 +1100,6 @@ a.footer__socials--link svg {
     font-weight: 600;
   }
 }
+
 
 
