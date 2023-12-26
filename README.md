@@ -1,4 +1,4 @@
-## :airplane: Getting Started
+# :airplane: Getting Started
 
 Setting up <b>Read Odyssey</b> on your local machine? Here are the instructions:
 
