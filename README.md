@@ -133,13 +133,16 @@ https://github.com/Mrakheen/Read-Odyssey-Travel-Forum-Webapp/assets/53326887/da5
 
 # Aknowledgements 
 <details>
- <summary><b>Contributors</b></summary>
- <br />
+<summary><b>Contributors</b></summary>
+<br />
 1. Mubtasim Ahmed Rakheen
+ 
 2. Hanumath Ponnaluri
+   
 3. Phu Duc Nguyen
+   
 4. Freddy Rodriguez
 </details>
 
-### Thanks to <b>Julian Tjiong</b> for his open-source Github project Ribbit <b>[Github Link: https://github.com/juliantjg/Ribbit]</b>. The project has been built on top of the existing project. 
+####### Thanks to <b>Julian Tjiong</b> for his open-source Github project Ribbit <b>[Github Link: https://github.com/juliantjg/Ribbit]</b>. The project has been built on top of the existing project. 
 
