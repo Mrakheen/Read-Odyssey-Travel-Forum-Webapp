@@ -97,7 +97,7 @@ You can now view frontend in the browser.
 </details>
 
 <details>
- <summary><b>Running tests & Built With</b></summary>
+ <summary><b>Running tests</b></summary>
  <br />
 
 1. To run API tests, simply do the following
