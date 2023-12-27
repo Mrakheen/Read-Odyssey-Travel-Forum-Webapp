@@ -106,14 +106,14 @@ You can now view frontend in the browser.
 $ cd backend
 $ python manage.py test
 ```
-  
-## 🛠️ Built With 
+</details> 
+
+# 🛠️ Built With 
 - <img src="https://user-images.githubusercontent.com/53683415/223294710-a2ba9d4c-c680-497a-9b71-101f2186fc49.png" width="12"> <b><a href="https://reactjs.org/">React</a> -</b> React is a free and open-source front-end JavaScript library for building user interfaces based on components.
 - <img src="https://user-images.githubusercontent.com/53683415/223313723-71cdde37-3494-44e8-80cb-01edecb3311c.png" width="12"> <b><a href="https://getbootstrap.com/">Bootstrap</a> -</b> Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
 - <img src="https://user-images.githubusercontent.com/53683415/223313813-78e199cc-9a22-4603-99d3-6b50e2bcec0f.png" width="12"> <b><a href="https://www.djangoproject.com/">Django</a> -</b> Django is a free and open-source, Python-based web framework that follows the model–template–views architectural pattern.
 - <img src="https://user-images.githubusercontent.com/53683415/223313847-3cf57f1a-11fd-4963-a1df-b3895e478119.png" width="12"> <b><a href="https://redux.js.org/">Redux</a> -</b> Redux is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces.
 
-</details>
 
 # Video Demos
 
