@@ -187,33 +187,33 @@ function ShowCommunityGuidelinesMessage() {
                   </div>
                   <div className="row">
                     <div className="card border-0 col-md-12 offset-md-1 text-center" style={{ backgroundColor: '#dfd4d4ad' }}>
-                      <h1><strong>Welcome to Redyssey!</strong></h1>
+                      <h1><strong>Welcome to Read Odyssey!</strong></h1>
                       <p>
         <strong>Discover the World Through Travel Reviews</strong>
       </p>
       <p>
-        Redyssey is not just a platform; it's your gateway to a world of travel experiences. Whether you're looking for dream destinations, just browsing or currently at travel, Redyssey is here to connect you with the heartbeat of travel.
+        Read Odyssey is not just a platform; it's your gateway to a world of travel experiences. Whether you're looking for dream destinations, just browsing or currently at travel, Read Odyssey is here to connect you with the heartbeat of travel.
       </p>
-      <h2>What Sets Redyssey Apart?</h2>
+      <h2>What Sets Read Odyssey Apart?</h2>
       <p>
         <span role="img" aria-label="Globe">🌍</span> <strong>Authentic Reviews:</strong> Our community of passionate travelers shares honest and authentic reviews, ensuring you get the real scoop on destinations, accommodations, and adventures.
       </p>
       <p>
-        <span role="img" aria-label="Airplane">✈️</span> <strong>Explore Hidden Gems:</strong> Uncover off-the-beaten-path destinations and hidden gems suggested by fellow Redyssey explorers. Say goodbye to the ordinary, and embrace the extraordinary.
+        <span role="img" aria-label="Airplane">✈️</span> <strong>Explore Hidden Gems:</strong> Uncover off-the-beaten-path destinations and hidden gems suggested by fellow Read Odyssey explorers. Say goodbye to the ordinary, and embrace the extraordinary.
       </p>
       <p>
-        <span role="img" aria-label="Handshake">🤝</span> <strong>Connect with Travel Enthusiasts:</strong> Redyssey isn't just about reviews; it's about building a community of like-minded individuals who share a love for exploration. Connect, engage, and swap travel stories with fellow adventurers.
+        <span role="img" aria-label="Handshake">🤝</span> <strong>Connect with Travel Enthusiasts:</strong> Read Odyssey isn't just about reviews; it's about building a community of like-minded individuals who share a love for exploration. Connect, engage, and swap travel stories with fellow adventurers.
       </p>
       <h2>Your Journey Starts Here</h2>
       <p>
-        Embark on a journey of discovery with Redyssey. From breathtaking landscapes to bustling cityscapes, our platform is your digital compass for navigating the vast realm of travel possibilities.
+        Embark on a journey of discovery with Read Odyssey. From breathtaking landscapes to bustling cityscapes, our platform is your digital compass for navigating the vast realm of travel possibilities.
       </p>
       <p>
-        Join Redyssey today and let the adventure begin!
+        Join Read Odyssey today and let the adventure begin!
       </p>
-                      <h1><strong>Redyssey Community Guidlines</strong></h1>
+                      <h1><strong>Read Odyssey Community Guidlines</strong></h1>
                       <p>
-        Welcome to the Redyssey community! To ensure a positive and respectful environment for all our members, we have established these community guidelines. Please read and adhere to them when participating in discussions, posting content, or interacting with others on Redyssey.
+        Welcome to the Read Odyssey community! To ensure a positive and respectful environment for all our members, we have established these community guidelines. Please read and adhere to them when participating in discussions, posting content, or interacting with others on Read Odyssey.
       </p>
       <h2>1. Be Respectful</h2>
       <p>
@@ -240,7 +240,7 @@ function ShowCommunityGuidelinesMessage() {
         If you come across content or behavior that violates these guidelines, please report it to the moderators. We rely on the community to help maintain a safe and enjoyable environment for everyone.
       </p>
       <p>
-        By following these guidelines, you contribute to creating a vibrant and respectful community on Redyssey. Thank you for being a valued member!
+        By following these guidelines, you contribute to creating a vibrant and respectful community on Read Odyssey. Thank you for being a valued member!
       </p>
                     </div>
                   </div>

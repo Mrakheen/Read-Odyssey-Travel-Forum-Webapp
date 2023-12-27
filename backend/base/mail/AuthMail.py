@@ -7,7 +7,7 @@ def userRegistered(username, to):
     html_message = render_to_string('user-registered.html', {'username': username})
     text_content = strip_tags(html_message)
     send_mail(
-        'Welcome to Redyssey',
+        'Welcome to Read Odyssey',
         text_content,
         Utilities.get.DEFAULT_APP_NAME.value,
         [to],

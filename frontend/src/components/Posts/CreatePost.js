@@ -103,6 +103,7 @@ function CreatePost() {
     setEnteredLocation(locationURL);
   };
 
+
   const submitHandler = (e) => {
     e.preventDefault();
   

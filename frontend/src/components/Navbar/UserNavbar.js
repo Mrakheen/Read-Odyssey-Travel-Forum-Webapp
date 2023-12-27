@@ -73,8 +73,8 @@ function UserNavbar({ onSearch }) {
                 src={logoSmall}
                 className="d-inline-block ml-1" // Add a left margin
                 id="logoNavbar"
-                width="150"
-                height="35"
+                width="200"
+                height="50"
                 alt="Logo Small"
               />
             </Navbar.Brand>
@@ -146,19 +146,19 @@ function UserNavbar({ onSearch }) {
                       Logout
                     </NavDropdown.Item>
                     <LinkContainer to="/community-guidelines">
-            <NavDropdown.Item>
-              Community Guidelines
-            </NavDropdown.Item>
-          </LinkContainer>
-                  </NavDropdown>
-                ) : (
-                  <LinkContainer to="/login">
-                    <Nav.Link>
-                      <i className="fas fa-user"></i>
-                      &nbsp;&nbsp;Login
-                    </Nav.Link>
+                    <NavDropdown.Item>
+                      Community Guidelines
+                    </NavDropdown.Item>
                   </LinkContainer>
-                )}
+                          </NavDropdown>
+                        ) : (
+                          <LinkContainer to="/login">
+                            <Nav.Link>
+                              <i className="fas fa-user"></i>
+                              &nbsp;&nbsp;Login
+                            </Nav.Link>
+                          </LinkContainer>
+                        )}
               </button>
             </li>
           </ul>

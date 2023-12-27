@@ -6,8 +6,8 @@ from django.contrib.auth.hashers import make_password
 from base.mail.AuthMail import userRegistered
 
 def sendNotification(user):
-    title = 'Welcome to Redyssey!'
-    text = 'Congratulations on creating your account, ' + user.username + '! You can now access user only features such as creating posts, joining subredyssey, and more. Enjoy.'
+    title = 'Welcome to Read Odyssey!'
+    text = 'Congratulations on creating your account, ' + user.username + '! You can now access user only features such as creating posts, joining subRead Odyssey, and more. Enjoy.'
     NotifyUser.send(user, title, text)
 
 def register(request):
